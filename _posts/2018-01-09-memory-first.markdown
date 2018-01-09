@@ -9,8 +9,6 @@ categories: Feels
 
 或许真的到了，总是希望去记录点什么的年龄。
 
-![](/images/temp.jpg)
-
 —
 
 *写于2018年1月29日，办公室*
