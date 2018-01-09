@@ -8,7 +8,7 @@ permalink: /about/
 
 最近研究兴趣：ML、DL、Functional Programming、Swift
 
-过去的一些工作
+过去的一些工作:
 
 **Speak**
 

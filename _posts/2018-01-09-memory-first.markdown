@@ -9,6 +9,7 @@ categories: Feels
 
 或许真的到了，总是希望去记录点什么的年龄。
 
+![](/images/temp.jpg)
 
 —
 
