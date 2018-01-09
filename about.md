@@ -8,19 +8,19 @@ permalink: /about/
 
 最近研究兴趣：ML、DL、Functional Programming、Swift
 
-## 过去的一些工作
+#### 过去的一些工作
 
-### Speak
+##### Speak
 
-#### *Lightweight reactive-api for MVVM*, 2017@Swift.
+###### *Lightweight reactive-api for MVVM*, 2017@Swift.
 
-#### *函数式设计模式*, iDev 2016
+###### *函数式设计模式*, iDev 2016
 
-#### *实战 Swift 函数式编程*, <T>沙龙 深圳
+###### *实战 Swift 函数式编程*, <T>沙龙 深圳
 
-#### *纯函数式的解释器设计*, SwiftGG直播分享
+###### *纯函数式的解释器设计*, SwiftGG直播分享
 
-### Project
+##### Project
 
 
 
