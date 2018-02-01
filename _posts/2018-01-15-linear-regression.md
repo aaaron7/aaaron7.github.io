@@ -150,8 +150,8 @@ $$\begin{align*}
 要求解上式的公式，主要会用到里面的两个公式：
 
 公式(69):   $$\begin{align*} 
-    \frac{\partial x^{T}\mathbf{a}}{\partial \mathbf{x}} =   
-    \frac{\partial \mathbf{a}^{T}x}{\partial \mathbf{x}} =
+    \frac{\partial \mathbf{x}^{T}\mathbf{a}}{\partial \mathbf{x}} =   
+    \frac{\partial \mathbf{a}^{T}\mathbf{x}}{\partial \mathbf{x}} =
     \mathbf{a}
 \end{align*}$$
 
