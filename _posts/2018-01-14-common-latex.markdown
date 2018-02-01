@@ -13,6 +13,8 @@ author: aaron
 - **\approx**, 约等于
 - **\frac{分子}{分母}**，分数
 
+妈的太多了，还是直接看链接吧：
+
 [完整版本的可以参考这里](http://www.mohu.org/info/symbols/symbols.htm)
 
 [矩阵的可以参考这里](https://math-linux.com/latex-26/faq/latex-faq/article/how-to-write-matrices-in-latex-matrix-pmatrix-bmatrix-vmatrix-vmatrix)
