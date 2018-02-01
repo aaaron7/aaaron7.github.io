@@ -1,10 +1,231 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-10T00:09:52+08:00</updated><id>http://localhost:4000/</id><title type="html">TALKING AARON</title><subtitle>Now this is not the end. It is not even the beginning of the end.  But it is, perhaps, the end of the beginning.</subtitle><entry><title type="html">弄了个博客，发帖庆祝一下</title><link href="http://localhost:4000/feels/2018/01/09/memory-first.html" rel="alternate" type="text/html" title="弄了个博客，发帖庆祝一下" /><published>2018-01-09T20:59:59+08:00</published><updated>2018-01-09T20:59:59+08:00</updated><id>http://localhost:4000/feels/2018/01/09/memory-first</id><content type="html" xml:base="http://localhost:4000/feels/2018/01/09/memory-first.html">&lt;p&gt;不记得这是我第几个博客，虽然根据之前的经验，这很有可能是我又一次心血来潮。不过冥冥之中我感觉很不一样，总觉得这次的心境和之前有了很大的不同。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-01T20:56:48+08:00</updated><id>http://localhost:4000/</id><title type="html">TALKING AARON</title><subtitle>Now this is not the end. It is not even the beginning of the end.  But it is, perhaps, the end of the beginning.</subtitle><entry><title type="html">机器学习中的回归问题</title><link href="http://localhost:4000/machine/learning/2018/01/15/linear-regression.html" rel="alternate" type="text/html" title="机器学习中的回归问题" /><published>2018-01-15T21:06:59+08:00</published><updated>2018-01-15T21:06:59+08:00</updated><id>http://localhost:4000/machine/learning/2018/01/15/linear-regression</id><content type="html" xml:base="http://localhost:4000/machine/learning/2018/01/15/linear-regression.html">&lt;p&gt;最近花时间认真学习了一下机器学习中的回归问题，虽然回归问题（线性回归+逻辑回归）在周志华的书里就那么几页，但其实书里对很多公式的推导省略了大量的细节，这次秉着较真的态度看了一下，发现名堂其实不少。写篇文章总结一下。&lt;/p&gt;
+
+&lt;h1 id=&quot;1-机器学什么&quot;&gt;1. 机器学什么&lt;/h1&gt;
+
+&lt;p&gt;了解过机器学习都应该知道，机器学习的本质就是给出一个包含n条记录的记录集合&lt;script type=&quot;math/tex&quot;&gt;\begin{align*}\mathbf{D}=\{(\mathbf{x_{1}},y_{1}),(\mathbf{x_{2}},y_{2}),...,(\mathbf{x_{n}},y_{n}) \} \end{align*}&lt;/script&gt;，其中某一条记录&lt;script type=&quot;math/tex&quot;&gt;\begin{align*}\mathbf{x_{i}} \end{align*}&lt;/script&gt;表示第i条记录的输入，&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} y_{i} \end{align*}&lt;/script&gt;代表第i条记录的输出标记。而单个&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} x_{i} \end{align*}&lt;/script&gt;一般为向量，表示每条记录的属性集合，
+&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} \mathbf{x_{i}} = \{x_{i1},x_{i2},...,x_{id}\} \end{align*}&lt;/script&gt; 表示对于每一条记录的x，包含d个属性。&lt;/p&gt;
+
+&lt;p&gt;机器学习的任务都是通过数据集&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} \mathbf{D} \end{align*}&lt;/script&gt;, 学习得一个&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} f \end{align*}&lt;/script&gt;
+，使得&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} f(x_{i}) \approx y_{i} \end{align*}&lt;/script&gt;。&lt;/p&gt;
+
+&lt;h1 id=&quot;2-线性模型&quot;&gt;2. 线性模型&lt;/h1&gt;
+&lt;p&gt;这个&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} f \end{align*}&lt;/script&gt;长什么样，一般被称作“模型”，线性模型基本是最简单的一种：将属性加权组合。给定一个包含d个属性的记录&lt;script type=&quot;math/tex&quot;&gt;\begin{align*}\mathbf{x}=\{x_{1}; x_{2}; x_{3}...x_{d}\}  \end{align*}&lt;/script&gt;,线性模型尝试学得:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*} \mathbf{f(x)} = w_{1}x_{1} + w_{2}x_{2} + ... + w_{d}x_{d} + b\end{align*}&lt;/script&gt;
+
+&lt;p&gt;其中，&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} \mathbf{w} = \{w_{1},w_{2},...w_{d}\} \end{align*}&lt;/script&gt; 为各个属性的权重，b为偏移(可以类比直线方程，&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} y = kx + b \end{align*}&lt;/script&gt;)。&lt;/p&gt;
+
+&lt;p&gt;这里所说的学习，就是要通过数据集&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} D \end{align*}&lt;/script&gt; 来确定 &lt;script type=&quot;math/tex&quot;&gt;\begin{align*} \mathbf{w} 和 b  \end{align*}&lt;/script&gt;。把w和x写为向量形式，则线性模型可以表示为：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*} \mathbf{f(x)} = \mathbf{w^{T}x} + b \end{align*}&lt;/script&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} \mathbf{w} \end{align*}&lt;/script&gt; 为什么要转置？机器学习中所有的向量默认都是列向量，所以&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} \mathbf{w} \end{align*}&lt;/script&gt;需要转置成行向量才可以和&lt;script type=&quot;math/tex&quot;&gt;\begin{align*}\mathbf{x}  \end{align*}&lt;/script&gt;相乘。 这里如果懵逼的话，建议复习一下矩阵乘法的规则。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*}  \end{align*}&lt;/script&gt;
+
+&lt;h1 id=&quot;3-线性回归&quot;&gt;3. 线性回归&lt;/h1&gt;
+&lt;p&gt;一句话解释，线性回归就是线性模型的学习过程。在给定输入数据集&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} \mathbf{D} \end{align*}&lt;/script&gt;的基础上, 找到能够满足要求的 &lt;script type=&quot;math/tex&quot;&gt;\begin{align*} \mathbf{w}和b \end{align*}&lt;/script&gt;, 这个过程，就是线性回归。&lt;/p&gt;
+
+&lt;p&gt;那要怎么求解线性回归呢？不同的老师会用不同的方法，比如周志华会先从一元变量来举例（即假设所有记录都只有一个属性），进而扩展到多元的场景。这里介绍林轩田的求解思路，更nice一些。&lt;/p&gt;
+
+&lt;h2 id=&quot;31-等价变换&quot;&gt;3.1 等价变换&lt;/h2&gt;
+
+&lt;p&gt;这里我们把&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} b \end{align*}&lt;/script&gt; 记做 &lt;script type=&quot;math/tex&quot;&gt;\begin{align*} w_{0}  \end{align*}&lt;/script&gt;，再设 &lt;script type=&quot;math/tex&quot;&gt;\begin{align*} x_{0}=1 \end{align*}&lt;/script&gt;。这样，上面的线性模型可以等价改写为：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*} 
+    \mathbf{f(x)} = w_{0}x_{0} + w_{1}x_{1} + w_{2}x_{2} + ... + w_{d}x_{d}
+ \end{align*}&lt;/script&gt;
+
+&lt;p&gt;等价为向量模式（因为新引入了&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} w_{0} \end{align*}&lt;/script&gt;和 &lt;script type=&quot;math/tex&quot;&gt;\begin{align*} x_{0} \end{align*}&lt;/script&gt;,故用大写表示）：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*} \mathbf{f(x)} = W^{T}X \end{align*}&lt;/script&gt;
+
+&lt;h2 id=&quot;32-误差衡量&quot;&gt;3.2 误差衡量&lt;/h2&gt;
+
+&lt;p&gt;在考虑如何找到最好的&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} W \end{align*}&lt;/script&gt;之前，我们先考虑我们如何衡量一个&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} W  \end{align*}&lt;/script&gt;的好坏。在机器学习中，最常见的误差衡量标准就是均方差（Mean Square Erro，MSE）。给定一个&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} W \end{align*}&lt;/script&gt;时，在样本集&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} \mathbf{D} \end{align*}&lt;/script&gt;的n个样本的MSE为：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*} 
+    E(W) = \frac{1}{n}\sum_{i=1}^{n}(W^{T}X_{i} - y{i})^{2}
+ \end{align*}&lt;/script&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;这里的&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} X_{i} \end{align*}&lt;/script&gt;是向量，代表一条记录的输入，&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} y_{i} \end{align*}&lt;/script&gt;代表对应的样本标签。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;为了方便后面的推导，交换一下X和w的位置，所以变成：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*} 
+    E(W) = \frac{1}{n}\sum_{i=1}^{n}(X_{i}^{T}W - y_{i})^{2}
+ \end{align*}&lt;/script&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;如果不明白为毛可以交换，你可以展开一下，就会发现是等价的；&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这里我们看到式子里有个求和的符号，看着比较讨厌（不方便后续推导）。能不能干掉呢？观察一下求和内部的式子，是一堆平方的和。数学中有不少的概念最终落地下来是平方和的形式，一个直接的例子就是向量的模。比如一个N维向量&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} \vec a \end{align*}&lt;/script&gt; 的模 &lt;script type=&quot;math/tex&quot;&gt;\begin{align*} \|\vec a\| = \sqrt[2]{a_{1}^{2} + a_{2}^{2} + a_{3}^{2}...+ a_{N}^{2}  } \end{align*}&lt;/script&gt;, 同理，上述的E(W)可以写成：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*} 
+    E(W) = \frac{1}{n}\begin{Vmatrix}
+        X_{1}^{T}W - y_{1} \\
+        X_{2}^{T}W - y_{2} \\
+        ... \\
+        X_{n}^{T}W - y_{n}
+    \end{Vmatrix}
+    ^{2}
+ \end{align*}&lt;/script&gt;
+
+&lt;p&gt;可等价变换为：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*} 
+    E(W) = \frac{1}{n}\begin{Vmatrix}
+        \begin{pmatrix}
+            X_{1}^{T} \\
+            X_{2}^{T} \\
+            ... \\
+            X_{n}^{T} 
+        \end{pmatrix}W - 
+        \begin{pmatrix}
+            y_{1} \\
+            y_{2} \\
+            ... \\
+            y_{n}
+        \end{pmatrix}
+    \end{Vmatrix}
+    ^{2}
+ \end{align*}&lt;/script&gt;
+
+&lt;p&gt;将X 和 y表示为向量形式，于是有：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*} 
+    E(W) = \frac{1}{n}
+    \begin{Vmatrix}
+        \mathbf{X^{T}}W - \mathbf{y}
+    \end{Vmatrix}
+    ^{2}
+ \end{align*}&lt;/script&gt;
+
+&lt;h2 id=&quot;33-误差最小化&quot;&gt;3.3 误差最小化&lt;/h2&gt;
+
+&lt;p&gt;当我们得出E(W)的表达式之后，整个线性回归的过程就变成了找到一个W，使E(W)最小化。我们都知道求极值最直接的方法就是对其函数求导，导数为0的点就是极值点。再通过分析左右导数的正负情况即可得到能够使E(W)最小的W。&lt;/p&gt;
+
+&lt;p&gt;首先对E(W) 求导可得：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*} 
+    \frac{\partial E(W)}{\partial W} = 
+        \frac{\partial \frac{1}{n}(
+            \mathbf{W^{T}{X^{T}XW} - 2W^{T}X^{T}y + y^{T}y}
+        )}{\partial W}
+ \end{align*}&lt;/script&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;这里先用了一个简单的公式把上式展开 &lt;script type=&quot;math/tex&quot;&gt;\begin{align*} (a+b)^{2} = a^{2} + 2ab + b^{2} \end{align*}&lt;/script&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;在上市中，X和y都是标量（只有W是变量），为了理解方便，我们假设 &lt;script type=&quot;math/tex&quot;&gt;\begin{align*} A = X^{T}X， b = X^{T}y, c = y^{T}y \end{align*}&lt;/script&gt; , 于是上式可以化简为：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*} 
+    \frac{\partial E(W)}{\partial W} = 
+        \frac{\partial \frac{1}{n}(
+            \mathbf{W^{T}AW - 2W^{T}b + c}
+        )}{\partial W}
+ \end{align*}&lt;/script&gt;
+
+&lt;p&gt;现在的问题来了，W是一个d维向量，代表每个输入记录的d个特征值。我们该如何对向量求导呢？先假设w,a,b,c是普通的标量，则有：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*} 
+    \frac{\partial E(w)}{\partial w} = 
+        \frac{\partial \frac{1}{n}(
+            aw^{2} - 2wb + c
+        )}{\partial w}
+    = 
+    \frac{1}{n}(2aw - 2b)
+\end{align*}&lt;/script&gt;
+
+&lt;p&gt;标量情况的确是很简单，那向量情况呢？一般来说对矩阵求导都比较复杂，具体有兴趣的同学可以参考MIT的Matrix cookbook。原理其实比较简单，无非就是分别针对向量的各个分量求偏导，最终的结果组成的向量就是求导的结果。但推导起来肯定都比较复杂。cookbook针对常见情况直接给出了公式，非常方便。&lt;/p&gt;
+
+&lt;p&gt;要求解上式的公式，主要会用到里面的两个公式：&lt;/p&gt;
+
+&lt;p&gt;公式(69):   &lt;script type=&quot;math/tex&quot;&gt;\begin{align*} 
+    \frac{\partial x^{T}\mathbf{a}}{\partial \mathbf{x}} =   
+    \frac{\partial \mathbf{a}^{T}x}{\partial \mathbf{x}} =
+    \mathbf{a}
+\end{align*}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;公式(81): &lt;script type=&quot;math/tex&quot;&gt;\begin{align*}
+    \frac{\partial \mathbf{x}^{T}B\mathbf{x}}{\partial \mathbf{x}} = (B + B^{T})\mathbf{x}
+\end{align*}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;将(69)和(81)代入上面的向量版微分公式，可以得到：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*} 
+    \frac{\partial E(W)}{\partial W} = 
+        \frac{\partial \frac{1}{n}(
+            \mathbf{W^{T}AW - 2W^{T}b + c}
+        )}{\partial W} 
+
+        = \frac{1}{n}((A + A^{T})W - 2b) 
+        = \frac{1}{n}(2AW - 2b) \\
+
+        = \frac{2}{n}(X^{T}XW - 2X^{T}y)
+ \end{align*}&lt;/script&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;因为&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} A = X^{T}X \end{align*}&lt;/script&gt;， 所以 &lt;script type=&quot;math/tex&quot;&gt;\begin{align*} A+A^{T} = 2A \end{align*}&lt;/script&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;可以看到形式上，求导结果和标量版的一模一样。这或许就是线性代数美的地方。&lt;/p&gt;
+
+&lt;p&gt;令E(W)=0，可以得到此时W的取值为：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*} 
+    W = (X^{T}X)^{-1}X^{T}y
+ \end{align*}&lt;/script&gt;
+
+&lt;p&gt;上式也叫W的闭式解(Closed-form solution)， 代表是从公式精准的推导出的结果，而不是靠一些数值优化方法得出。机器学习中，由于n的数量一般都&amp;gt;d+1(d为属性的个数)，所以&lt;script type=&quot;math/tex&quot;&gt;\begin{align*} X^{T}X \end{align*}&lt;/script&gt; 一般都是可逆的。&lt;/p&gt;
+
+&lt;h1 id=&quot;参考资料&quot;&gt;参考资料&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;林轩田的公开课；&lt;/li&gt;
+  &lt;li&gt;Matrix cookbook；&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>aaron</name></author><summary type="html">最近花时间认真学习了一下机器学习中的回归问题，虽然回归问题（线性回归+逻辑回归）在周志华的书里就那么几页，但其实书里对很多公式的推导省略了大量的细节，这次秉着较真的态度看了一下，发现名堂其实不少。写篇文章总结一下。</summary></entry><entry><title type="html">开篇文章，记录常见的latex语法</title><link href="http://localhost:4000/machine/learning/2018/01/14/common-latex.html" rel="alternate" type="text/html" title="开篇文章，记录常见的latex语法" /><published>2018-01-14T22:29:59+08:00</published><updated>2018-01-14T22:29:59+08:00</updated><id>http://localhost:4000/machine/learning/2018/01/14/common-latex</id><content type="html" xml:base="http://localhost:4000/machine/learning/2018/01/14/common-latex.html">&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;\mathbf{X}&lt;/strong&gt; 加粗X&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;\X_{d}&lt;/strong&gt; X下标为d&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;\X^{d}&lt;/strong&gt; X上标为d&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;{ }&lt;/strong&gt;  因为{}是latex的语法，所以要显示{}需要使用转义符号&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;\approx&lt;/strong&gt;, 约等于&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;\frac{分子}{分母}&lt;/strong&gt;，分数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.mohu.org/info/symbols/symbols.htm&quot;&gt;完整版本的可以参考这里&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://math-linux.com/latex-26/faq/latex-faq/article/how-to-write-matrices-in-latex-matrix-pmatrix-bmatrix-vmatrix-vmatrix&quot;&gt;矩阵的可以参考这里&lt;/a&gt;&lt;/p&gt;</content><author><name>aaron</name></author><summary type="html">\mathbf{X} 加粗X \X_{d} X下标为d \X^{d} X上标为d { } 因为{}是latex的语法，所以要显示{}需要使用转义符号 \approx, 约等于 \frac{分子}{分母}，分数</summary></entry><entry><title type="html">第一次体验飞机上的wifi</title><link href="http://localhost:4000/feels/2018/01/10/wifi-in-airplane.html" rel="alternate" type="text/html" title="第一次体验飞机上的wifi" /><published>2018-01-10T21:06:59+08:00</published><updated>2018-01-10T21:06:59+08:00</updated><id>http://localhost:4000/feels/2018/01/10/wifi-in-airplane</id><content type="html" xml:base="http://localhost:4000/feels/2018/01/10/wifi-in-airplane.html">&lt;p&gt;下午临时接到通知去优酷出差，晚上就一脸懵逼的登上了飞机。&lt;/p&gt;
+
+&lt;p&gt;南航的大飞机感觉更新换代很快，娱乐系统比想象中的好，更牛逼的是居然有wifi！第一次在高空中上网有一种奇怪的体验。&lt;/p&gt;</content><author><name></name></author><summary type="html">下午临时接到通知去优酷出差，晚上就一脸懵逼的登上了飞机。</summary></entry><entry><title type="html">弄了个博客，发帖庆祝一下</title><link href="http://localhost:4000/feels/2018/01/09/memory-first.html" rel="alternate" type="text/html" title="弄了个博客，发帖庆祝一下" /><published>2018-01-09T20:59:59+08:00</published><updated>2018-01-09T20:59:59+08:00</updated><id>http://localhost:4000/feels/2018/01/09/memory-first</id><content type="html" xml:base="http://localhost:4000/feels/2018/01/09/memory-first.html">&lt;p&gt;不记得这是我第几个博客，虽然根据之前的经验，这很有可能是我又一次心血来潮。不过冥冥之中我感觉很不一样，总觉得这次的心境和之前有了很大的不同。&lt;/p&gt;
 
 &lt;p&gt;或许真的到了，总是希望去记录点什么的年龄。&lt;/p&gt;
 
 &lt;p&gt;—&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;写于2018年1月29日，办公室&lt;/em&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">不记得这是我第几个博客，虽然根据之前的经验，这很有可能是我又一次心血来潮。不过冥冥之中我感觉很不一样，总觉得这次的心境和之前有了很大的不同。</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2018/01/09/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-01-09T20:05:38+08:00</published><updated>2018-01-09T20:05:38+08:00</updated><id>http://localhost:4000/jekyll/update/2018/01/09/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/01/09/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;写于2018年1月29日，办公室&lt;/em&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+  &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) \\
+      \vdots &amp; \ddots &amp; \vdots \\
+      \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*} %]]&gt;&lt;/script&gt;</content><author><name></name></author><summary type="html">不记得这是我第几个博客，虽然根据之前的经验，这很有可能是我又一次心血来潮。不过冥冥之中我感觉很不一样，总觉得这次的心境和之前有了很大的不同。</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2018/01/09/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-01-09T20:05:38+08:00</published><updated>2018-01-09T20:05:38+08:00</updated><id>http://localhost:4000/jekyll/update/2018/01/09/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/01/09/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
