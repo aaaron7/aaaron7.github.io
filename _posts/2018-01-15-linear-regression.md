@@ -125,7 +125,7 @@ $$\begin{align*}
 
 > 这里先用了一个简单的公式把上式展开 $$\begin{align*} (a+b)^{2} = a^{2} + 2ab + b^{2} \end{align*}$$
 
-在上市中，X和y都是标量（只有W是变量），为了理解方便，我们假设 $$\begin{align*} A = X^{T}X， b = X^{T}y, c = y^{T}y \end{align*}$$ , 于是上式可以化简为：
+在上式中，X和y都是标量（只有W是变量），为了理解方便，我们假设 $$\begin{align*} A = X^{T}X， b = X^{T}y, c = y^{T}y \end{align*}$$ , 于是上式可以化简为：
 
 $$\begin{align*} 
     \frac{\partial E(W)}{\partial W} = 
