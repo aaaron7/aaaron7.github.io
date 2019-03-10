@@ -1,8 +1,8 @@
 ---
 layout: post
-title : "机器学习中的回归问题"
+title : "线性回归的数学推导"
 date: 2018-01-15 21:06:59 +0800
-categories: Machine Learning
+categories: ML
 author: aaron
 ---
 

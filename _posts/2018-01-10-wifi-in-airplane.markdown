@@ -3,6 +3,7 @@ layout: post
 title : "第一次体验飞机上的wifi"
 date: 2018-01-10 21:06:59 +0800
 categories: Feels
+author: aaron
 ---
 
 下午临时接到通知去优酷出差，晚上就一脸懵逼的登上了飞机。

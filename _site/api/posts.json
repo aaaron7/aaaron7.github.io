@@ -2,9 +2,9 @@
 
   
     {
-        "title": "机器学习中的回归问题",
+        "title": "线性回归的数学推导",
         "category": "",
-        "url": "http://localhost:4000/blog/machine/learning/linear-regression",
+        "url": "http://localhost:4000/blog/ml/linear-regression",
         "tags": [],
         "date": "2018-01-15 21:06:59 +0800",
         "language": "en"
@@ -15,7 +15,7 @@
     {
         "title": "开篇文章，记录常见的latex语法",
         "category": "",
-        "url": "http://localhost:4000/blog/machine/learning/common-latex",
+        "url": "http://localhost:4000/blog/ml/common-latex",
         "tags": [],
         "date": "2018-01-14 22:29:59 +0800",
         "language": "en"
@@ -40,61 +40,6 @@
         "url": "http://localhost:4000/blog/feels/memory-first",
         "tags": [],
         "date": "2018-01-09 20:59:59 +0800",
-        "language": "en"
-    },
-  
-
-  
-    {
-        "title": "Welcome to Jekyll!",
-        "category": "",
-        "url": "http://localhost:4000/blog/jekyll/update/welcome-to-jekyll",
-        "tags": [],
-        "date": "2018-01-09 20:05:38 +0800",
-        "language": "en"
-    },
-  
-
-  
-    {
-        "title": "Theme Installation and Usage",
-        "category": "Readme",
-        "url": "http://localhost:4000/blog/readme/Readme",
-        "tags": ["Jekyll","Theme","GitHub","Installation"],
-        "date": "2016-06-08 23:25:00 +0800",
-        "language": "en"
-    },
-  
-
-  
-    {
-        "title": "Theme Features",
-        "category": "Features",
-        "url": "http://localhost:4000/blog/features/Features",
-        "tags": ["Jekyll","Theme","GitHub","Installation"],
-        "date": "2016-06-07 18:10:00 +0800",
-        "language": "en"
-    },
-  
-
-  
-    {
-        "title": "YAML Custom Features",
-        "category": "Features",
-        "url": "http://localhost:4000/blog/features/YAML-Features",
-        "tags": ["Jekyll","YAML","Features","Explained"],
-        "date": "2016-04-06 05:40:00 +0800",
-        "language": "en"
-    },
-  
-
-  
-    {
-        "title": "This post demonstrates post content styles",
-        "category": "Features",
-        "url": "http://localhost:4000/blog/features/Content",
-        "tags": ["Jekyll","Content","Demo"],
-        "date": "2016-03-05 00:00:00 +0800",
         "language": "en"
     }
   

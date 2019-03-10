@@ -2,7 +2,7 @@
 layout: post
 title : "开篇文章，记录常见的latex语法"
 date: 2018-01-14 22:29:59 +0800
-categories: Machine Learning
+categories: ML
 author: aaron
 ---
 

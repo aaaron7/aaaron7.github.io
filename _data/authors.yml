@@ -42,3 +42,12 @@ jwillmer:
   website:      "http://jwillmer.de/cv" 
   twitter:      jenswillmer
   github:       jwillmer
+
+aaron:
+  initial:      aaron
+  name:         "莲叔"        
+  picture:      /assets/aaron_avatar.jpg  
+  bio:          Stay hungry, Stay foolish
+  location:     China 
+  website:      "http://aaaron7.github.io" 
+  github:       aaaron7

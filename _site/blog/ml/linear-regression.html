@@ -3,28 +3,28 @@
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>机器学习中的回归问题</title>
+   <title>线性回归的数学推导</title>
    <meta name="description" content="最近花时间认真学习了一下机器学习中的回归问题，虽然回归问题（线性回归+逻辑回归）在周志华的书里就那么几页，但其实书里对很多公式的推导省略了大量的细节，这次秉着较真的态度看了一下，发现名堂其实不少。写篇文章总结一下。">
    <meta name="keywords" content="" />
    <meta name="HandheldFriendly" content="True">
    <meta name="robots" content="index,follow">
    <meta name="googlebot" content="index,follow">
-	<meta property="og:title" content="机器学习中的回归问题" />
+	<meta property="og:title" content="线性回归的数学推导" />
 	<meta property="og:type" content="article" />
 <meta property="og:image" content="http://localhost:4000/assets/mountain-cover.jpg" />
-<meta property="og:site_name" content="aaaron7&#39;s blog" />
+<meta property="og:site_name" content="Athrun &amp; Emery" />
 <meta property="og:description" content="最近花时间认真学习了一下机器学习中的回归问题，虽然回归问题（线性回归+逻辑回归）在周志华的书里就那么几页，但其实书里对很多公式的推导省略了大量的细节，这次秉着较真的态度看了一下，发现名堂其实不少。写篇文章总结一下。" />
-<meta property="og:url" content="http://localhost:4000/blog/machine/learning/linear-regression" />
-	<meta property="article:author" content="" />
-	<link rel="author" href="" />
+<meta property="og:url" content="http://localhost:4000/blog/ml/linear-regression" />
+	<meta property="article:author" content="http://aaaron7.github.io" />
+	<link rel="author" href="http://aaaron7.github.io" />
 <meta property="article:published_time" content="2018-01-15T21:06:59+08:00" />
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习中的回归问题">
+<meta name="twitter:title" content="线性回归的数学推导">
 <meta name="twitter:url" content="http://localhost:4000/">
 <meta name="twitter:description" content="最近花时间认真学习了一下机器学习中的回归问题，虽然回归问题（线性回归+逻辑回归）在周志华的书里就那么几页，但其实书里对很多公式的推导省略了大量的细节，这次秉着较真的态度看了一下，发现名堂其实不少。写篇文章总结一下。">
 <meta name="twitter:image:src" content="http://localhost:4000/assets/mountain-cover.jpg">
   <link rel="stylesheet" href="http://localhost:4000/css/screen.css">
-  <link rel="alternate" type="application/rss+xml" title="aaaron7's blog" href="http://localhost:4000/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Athrun & Emery" href="http://localhost:4000/feed.xml">
   <link rel="icon" href="http://localhost:4000/assets/favicon-16.png" sizes="16x16" type="image/png">
   <link rel="icon" href="http://localhost:4000/assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="http://localhost:4000/assets/favicon-48.png" sizes="48x48" type="image/png">
@@ -33,20 +33,18 @@
 <body class="home-template">
    <div class="site-wrapper">
 <header class="main-header detail-page image-bg  has-cover" style="background-image: url(http://localhost:4000/assets/mountain-cover.jpg)" >
-   <h1 class="page-title"><a href="http://localhost:4000/" title="aaaron7's blog">aaaron7's blog</a></h1>
+   <h1 class="page-title"><a href="http://localhost:4000/" title="Athrun & Emery">Athrun & Emery</a></h1>
    <h2 class="page-description">小园香径独徘徊</h2>
    <div class="nav">
             <a class="page-link" href="http://localhost:4000/" title="Home">Home</a>
             <a class="page-link" href="http://localhost:4000/about/" title="About">About</a>
-            <a class="page-link" href="http://localhost:4000/offline-warning/" title="Offline">Offline</a>
-            <a class="page-link" href="http://localhost:4000/cv" title="CV">CV</a>
-            <a class="page-link" href="http://localhost:4000/about" title="About">About</a>
    </div>
 </header>
-       <main class="content" role="main">
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<main class="content" role="main">
    <article class="post single-post" itemscope itemtype="http://schema.org/BlogPosting">
       <header class="post-header short-diver">
-           <h1 class="post-title" itemprop="name headline">机器学习中的回归问题</h1>
+           <h1 class="post-title" itemprop="name headline">线性回归的数学推导</h1>
            <section class="post-meta">
                 <time datetime="2018-01-15T21:06:59+08:00" itemprop="datePublished">Jan 15, 2018</time>
                 on
@@ -195,6 +193,23 @@
        </section>
        <footer class="post-footer">
            <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+   <div class="author-image">
+       <div class="img image-bg" style="background-image: url(http://localhost:4000/assets/aaron_avatar.jpg)">
+            <a class="hidden" href="http://localhost:4000/assets/aaron_avatar.jpg" itemprop="image">莲叔's Picture</a>
+       </div>
+   </div>
+   <div class="short-diver">
+       <h4 class="author" itemprop="name">莲叔</h4>
+       <p itemprop="description">Stay hungry, Stay foolish</p>
+       <div class="author-meta">
+            <span class="author-location icon-location" itemprop="nationality">China</span>
+            <span class="author-stats">
+			<i class="icon-stats-bars"></i>
+			4 Posts			
+			</span>
+            <span class="author-link icon-link" itemprop="url"><a href="http://aaaron7.github.io">About</a></span>
+       </div>
+   </div>
 </div>
        </footer>
    </article>
@@ -246,7 +261,7 @@ var config = {
 <script src="http://localhost:4000/js/post.js"></script>
        <footer class="site-footer">
     <button class="go-to-top"></button>
-   <p class="copyright"><a href="http://localhost:4000/" title="aaaron7's blog">aaaron7's blog</a> &copy; 2019 | <a href="http://localhost:4000/feed.xml" title="RSS Feed">RSS Feed</a></p>
+   <p class="copyright"><a href="http://localhost:4000/" title="Athrun & Emery">Athrun & Emery</a> &copy; 2019 | <a href="http://localhost:4000/feed.xml" title="RSS Feed">RSS Feed</a></p>
    <p class="poweredby">powered by <a href="https://jekyllrb.com/" title="Jekyll">Jekyll</a> with the <a href="https://github.com/jwillmer/jekyllDecent" title="jekyllDecent Theme">jekyllDecent</a> theme</p>
 </footer>
    </div>
