@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-01T21:51:06+08:00</updated><id>http://localhost:4000/</id><title type="html">TALKING AARON</title><subtitle>Now this is not the end. It is not even the beginning of the end.  But it is, perhaps, the end of the beginning.</subtitle><entry><title type="html">机器学习中的回归问题</title><link href="http://localhost:4000/machine/learning/2018/01/15/linear-regression.html" rel="alternate" type="text/html" title="机器学习中的回归问题" /><published>2018-01-15T21:06:59+08:00</published><updated>2018-01-15T21:06:59+08:00</updated><id>http://localhost:4000/machine/learning/2018/01/15/linear-regression</id><content type="html" xml:base="http://localhost:4000/machine/learning/2018/01/15/linear-regression.html">&lt;p&gt;最近花时间认真学习了一下机器学习中的回归问题，虽然回归问题（线性回归+逻辑回归）在周志华的书里就那么几页，但其实书里对很多公式的推导省略了大量的细节，这次秉着较真的态度看了一下，发现名堂其实不少。写篇文章总结一下。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>aaaron7's blog</title>
+    <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+      <pubDate>Sun, 10 Mar 2019 15:02:20 +0800</pubDate>
+    <lastBuildDate>Sun, 10 Mar 2019 15:02:20 +0800</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>机器学习中的回归问题</title>
+        <description>&lt;p&gt;最近花时间认真学习了一下机器学习中的回归问题，虽然回归问题（线性回归+逻辑回归）在周志华的书里就那么几页，但其实书里对很多公式的推导省略了大量的细节，这次秉着较真的态度看了一下，发现名堂其实不少。写篇文章总结一下。&lt;/p&gt;
 
 &lt;h1 id=&quot;1-机器学什么&quot;&gt;1. 机器学什么&lt;/h1&gt;
 
@@ -123,7 +136,7 @@
   &lt;p&gt;这里先用了一个简单的公式把上式展开 &lt;script type=&quot;math/tex&quot;&gt;\begin{align*} (a+b)^{2} = a^{2} + 2ab + b^{2} \end{align*}&lt;/script&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;在上市中，X和y都是标量（只有W是变量），为了理解方便，我们假设 &lt;script type=&quot;math/tex&quot;&gt;\begin{align*} A = X^{T}X， b = X^{T}y, c = y^{T}y \end{align*}&lt;/script&gt; , 于是上式可以化简为：&lt;/p&gt;
+&lt;p&gt;在上式中，X和y都是标量（只有W是变量），为了理解方便，我们假设 &lt;script type=&quot;math/tex&quot;&gt;\begin{align*} A = X^{T}X， b = X^{T}y, c = y^{T}y \end{align*}&lt;/script&gt; , 于是上式可以化简为：&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*} 
     \frac{\partial E(W)}{\partial W} = 
@@ -148,8 +161,8 @@
 &lt;p&gt;要求解上式的公式，主要会用到里面的两个公式：&lt;/p&gt;
 
 &lt;p&gt;公式(69):   &lt;script type=&quot;math/tex&quot;&gt;\begin{align*} 
-    \frac{\partial x^{T}\mathbf{a}}{\partial \mathbf{x}} =   
-    \frac{\partial \mathbf{a}^{T}x}{\partial \mathbf{x}} =
+    \frac{\partial \mathbf{x}^{T}\mathbf{a}}{\partial \mathbf{x}} =   
+    \frac{\partial \mathbf{a}^{T}\mathbf{x}}{\partial \mathbf{x}} =
     \mathbf{a}
 \end{align*}&lt;/script&gt;&lt;/p&gt;
 
@@ -190,7 +203,23 @@
 &lt;ol&gt;
   &lt;li&gt;林轩田的公开课；&lt;/li&gt;
   &lt;li&gt;Matrix cookbook；&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>aaron</name></author><summary type="html">最近花时间认真学习了一下机器学习中的回归问题，虽然回归问题（线性回归+逻辑回归）在周志华的书里就那么几页，但其实书里对很多公式的推导省略了大量的细节，这次秉着较真的态度看了一下，发现名堂其实不少。写篇文章总结一下。</summary></entry><entry><title type="html">开篇文章，记录常见的latex语法</title><link href="http://localhost:4000/machine/learning/2018/01/14/common-latex.html" rel="alternate" type="text/html" title="开篇文章，记录常见的latex语法" /><published>2018-01-14T22:29:59+08:00</published><updated>2018-01-14T22:29:59+08:00</updated><id>http://localhost:4000/machine/learning/2018/01/14/common-latex</id><content type="html" xml:base="http://localhost:4000/machine/learning/2018/01/14/common-latex.html">&lt;ul&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Mon, 15 Jan 2018 21:06:59 +0800</pubDate>
+        <link>http://localhost:4000/blog/machine/learning/linear-regression</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/machine/learning/linear-regression</guid>
+        
+        
+        <category>Machine</category>
+        
+        <category>Learning</category>
+        
+      </item>
+    
+      <item>
+        <title>开篇文章，记录常见的latex语法</title>
+        <description>&lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;\mathbf{X}&lt;/strong&gt; 加粗X&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;\X_{d}&lt;/strong&gt; X下标为d&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;\X^{d}&lt;/strong&gt; X上标为d&lt;/li&gt;
@@ -199,11 +228,43 @@
   &lt;li&gt;&lt;strong&gt;\frac{分子}{分母}&lt;/strong&gt;，分数&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;妈的太多了，还是直接看链接吧：&lt;/p&gt;
+
 &lt;p&gt;&lt;a href=&quot;http://www.mohu.org/info/symbols/symbols.htm&quot;&gt;完整版本的可以参考这里&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://math-linux.com/latex-26/faq/latex-faq/article/how-to-write-matrices-in-latex-matrix-pmatrix-bmatrix-vmatrix-vmatrix&quot;&gt;矩阵的可以参考这里&lt;/a&gt;&lt;/p&gt;</content><author><name>aaron</name></author><summary type="html">\mathbf{X} 加粗X \X_{d} X下标为d \X^{d} X上标为d { } 因为{}是latex的语法，所以要显示{}需要使用转义符号 \approx, 约等于 \frac{分子}{分母}，分数</summary></entry><entry><title type="html">第一次体验飞机上的wifi</title><link href="http://localhost:4000/feels/2018/01/10/wifi-in-airplane.html" rel="alternate" type="text/html" title="第一次体验飞机上的wifi" /><published>2018-01-10T21:06:59+08:00</published><updated>2018-01-10T21:06:59+08:00</updated><id>http://localhost:4000/feels/2018/01/10/wifi-in-airplane</id><content type="html" xml:base="http://localhost:4000/feels/2018/01/10/wifi-in-airplane.html">&lt;p&gt;下午临时接到通知去优酷出差，晚上就一脸懵逼的登上了飞机。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://math-linux.com/latex-26/faq/latex-faq/article/how-to-write-matrices-in-latex-matrix-pmatrix-bmatrix-vmatrix-vmatrix&quot;&gt;矩阵的可以参考这里&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;南航的大飞机感觉更新换代很快，娱乐系统比想象中的好，更牛逼的是居然有wifi！第一次在高空中上网有一种奇怪的体验。&lt;/p&gt;</content><author><name></name></author><summary type="html">下午临时接到通知去优酷出差，晚上就一脸懵逼的登上了飞机。</summary></entry><entry><title type="html">弄了个博客，发帖庆祝一下</title><link href="http://localhost:4000/feels/2018/01/09/memory-first.html" rel="alternate" type="text/html" title="弄了个博客，发帖庆祝一下" /><published>2018-01-09T20:59:59+08:00</published><updated>2018-01-09T20:59:59+08:00</updated><id>http://localhost:4000/feels/2018/01/09/memory-first</id><content type="html" xml:base="http://localhost:4000/feels/2018/01/09/memory-first.html">&lt;p&gt;不记得这是我第几个博客，虽然根据之前的经验，这很有可能是我又一次心血来潮。不过冥冥之中我感觉很不一样，总觉得这次的心境和之前有了很大的不同。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 14 Jan 2018 22:29:59 +0800</pubDate>
+        <link>http://localhost:4000/blog/machine/learning/common-latex</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/machine/learning/common-latex</guid>
+        
+        
+        <category>Machine</category>
+        
+        <category>Learning</category>
+        
+      </item>
+    
+      <item>
+        <title>第一次体验飞机上的wifi</title>
+        <description>&lt;p&gt;下午临时接到通知去优酷出差，晚上就一脸懵逼的登上了飞机。&lt;/p&gt;
+
+&lt;p&gt;南航的大飞机感觉更新换代很快，娱乐系统比想象中的好，更牛逼的是居然有wifi！第一次在高空中上网有一种奇怪的体验。&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 10 Jan 2018 21:06:59 +0800</pubDate>
+        <link>http://localhost:4000/blog/feels/wifi-in-airplane</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/feels/wifi-in-airplane</guid>
+        
+        
+        <category>Feels</category>
+        
+      </item>
+    
+      <item>
+        <title>弄了个博客，发帖庆祝一下</title>
+        <description>&lt;p&gt;不记得这是我第几个博客，虽然根据之前的经验，这很有可能是我又一次心血来潮。不过冥冥之中我感觉很不一样，总觉得这次的心境和之前有了很大的不同。&lt;/p&gt;
 
 &lt;p&gt;或许真的到了，总是希望去记录点什么的年龄。&lt;/p&gt;
 
@@ -225,9 +286,22 @@
       \vdots \\
       y_n
     \end{array} \right)
-\end{align*} %]]&gt;&lt;/script&gt;</content><author><name></name></author><summary type="html">不记得这是我第几个博客，虽然根据之前的经验，这很有可能是我又一次心血来潮。不过冥冥之中我感觉很不一样，总觉得这次的心境和之前有了很大的不同。</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2018/01/09/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-01-09T20:05:38+08:00</published><updated>2018-01-09T20:05:38+08:00</updated><id>http://localhost:4000/jekyll/update/2018/01/09/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/01/09/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+\end{align*} %]]&gt;&lt;/script&gt;
+</description>
+        <pubDate>Tue, 09 Jan 2018 20:59:59 +0800</pubDate>
+        <link>http://localhost:4000/blog/feels/memory-first</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/feels/memory-first</guid>
+        
+        
+        <category>Feels</category>
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
 &lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
 
@@ -237,4 +311,617 @@
 &lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 09 Jan 2018 20:05:38 +0800</pubDate>
+        <link>http://localhost:4000/blog/jekyll/update/welcome-to-jekyll</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/jekyll/update/welcome-to-jekyll</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Theme Installation and Usage</title>
+        <description>&lt;p&gt;This is a &lt;a href=&quot;https://github.com/jwillmer/jekyllDecent&quot;&gt;blog template&lt;/a&gt; for a static site generator named &lt;a href=&quot;https://jekyllrb.com/docs/home/&quot;&gt;Jekyll&lt;/a&gt; based on a &lt;a href=&quot;https://ghost.org&quot;&gt;Ghost&lt;/a&gt; template named &lt;a href=&quot;https://github.com/serenader2014/decent&quot;&gt;Decent&lt;/a&gt;. 
+If you like to see the theme in production have a look at &lt;a href=&quot;http://jwillmer.de&quot;&gt;jwillmer.de&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;screenshots&quot;&gt;Screenshots&lt;/h2&gt;
+
+&lt;div class=&quot;album&quot;&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;http://localhost:4000/media/img/2016-06-08-Readme-front-page-previewe.jpg&quot; /&gt;
+&lt;figcaption&gt;Frontpage&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;http://localhost:4000/media/img/2016-06-08-Readme-post-preview.jpg&quot; /&gt;
+&lt;figcaption&gt;Post&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;http://localhost:4000/media/img/2016-06-08-Readme-content-preview.jpg&quot; /&gt;
+&lt;figcaption&gt;Demo&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;http://localhost:4000/media/img/2016-06-08-Readme-about-preview.jpg&quot; /&gt;
+&lt;figcaption&gt;About Page&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To generate/host the blog you need to &lt;a href=&quot;https://jekyllrb.com/docs/installation/&quot;&gt;install Jekyll&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;For the plugins (github-pages) you need to install &lt;a href=&quot;http://bundler.io/&quot;&gt;Bundler&lt;/a&gt;: &lt;code&gt;gem install bundler&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Open a command prompt and install the plugins (github-pages): &lt;code&gt;bundle install&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;On Windows you can get an exception if you have not the latest rubygems. To solve it you get the latest rubygems or you can read &lt;a href=&quot;http://jwillmer.de/blog/tutorial/how-to-install-jekyll-and-pages-gem-on-windows-10-x46&quot;&gt;How to install Jekyll and pages-gem on Windows (x64)&lt;/a&gt; or you just remove the plugins by deleting the &lt;code&gt;Gemfile&lt;/code&gt; and delete all &lt;code&gt;gems:&lt;/code&gt; from the &lt;code&gt;_config.yml&lt;/code&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;build&quot;&gt;Build&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To build the static site you can use the generated site folder that Jekyll creates when you use &lt;code&gt;jekyll serve&lt;/code&gt; or you can build it explicitly with &lt;code&gt;jekyll build&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;To &lt;a href=&quot;https://github.com/awood/hawkins&quot;&gt;auto refresh your browser on changes&lt;/a&gt; run jekyll with the following command &lt;code&gt;jekyll liveserve&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;If you like to use GitHub to host your blog you can &lt;a href=&quot;https://github.com/jwillmer/jekyllDecent&quot;&gt;fork this project&lt;/a&gt; and publish the code to &lt;code&gt;gh-pages&lt;/code&gt;. GitHub has jekyll included and will generate the site for you.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;user-content&quot;&gt;User Content&lt;/h2&gt;
+
+&lt;p&gt;Blogposts can be written in &lt;a href=&quot;https://de.wikipedia.org/wiki/Markdown&quot;&gt;Markdown&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The folder for blog content is &lt;code&gt;_posts&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;For author details you need to modify &lt;code&gt;_data/authors.yml&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;For cv details you need to modify &lt;code&gt;_data/cv.yml&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;If you change the author in &lt;code&gt;_data&lt;/code&gt; you need to change the &lt;code&gt;author&lt;/code&gt; attribute in &lt;code&gt;_posts&lt;/code&gt; and &lt;code&gt;_pages&lt;/code&gt; as well&lt;/li&gt;
+  &lt;li&gt;For site properties (like the name) you need to modify &lt;code&gt;_config.yml&lt;/code&gt; and &lt;code&gt;robots.txt&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After modifying &lt;code&gt;*.yml&lt;/code&gt; files you need to restart jekyll to take effect.&lt;/p&gt;
+
+&lt;h3 id=&quot;yaml-features&quot;&gt;YAML Features&lt;/h3&gt;
+
+&lt;p&gt;Following (additional) features are supported in the header (&lt;a href=&quot;https://jekyllrb.com/docs/frontmatter/&quot;&gt;YAML Front Matter&lt;/a&gt;) of each post. A detailed description can be found in the &lt;a href=&quot;http://localhost:4000/blog/features/YAML-Features&quot;&gt;YAML Custom Features post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;---
+title:         Example      #Page/post title
+author:        jwillmer     #Page/post author
+cover:         /image.jpg   #Optional: Posibillity to change cover on a post/page
+redirect_from: /foo         #Optional: Redirect url
+visible:       false        #Optional: Hide page from listing in the menu.
+weight:        5            #Optional: Influence sorting of pages in the menu
+menutitle:     Offline      #Optional: Use a secondary name in the menu/post list
+tags:          hallo welt   #Optional: Will be displayed as tags and as keywords in posts
+keywords:      hallo welt   #Optional: Will add keywords to a page
+language:      en           #Optional: Will set a specific language of the page
+comments:      false        #Optional: Will enable/disable comments in your post 
+math:          false        #Optional: Will enable math formulas
+citation:      [..]         #Optional: Additional meta tags for scholar articles
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;p&gt;The theme is released under &lt;strong&gt;&lt;a href=&quot;https://github.com/jwillmer/jekyllDecent/blob/gh-pages/LICENSE&quot;&gt;The MIT License (MIT)&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;The MIT License (MIT)
+
+Copyright (c) 2016 Jens Willmer
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.    
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        <pubDate>Wed, 08 Jun 2016 23:25:00 +0800</pubDate>
+        <link>http://localhost:4000/blog/readme/Readme</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/readme/Readme</guid>
+        
+        <category>Jekyll</category>
+        
+        <category>Theme</category>
+        
+        <category>GitHub</category>
+        
+        <category>Installation</category>
+        
+        
+        <category>Readme</category>
+        
+      </item>
+    
+      <item>
+        <title>Theme Features</title>
+        <description>&lt;p&gt;The features described in this section are specific for this template. All other language features can be found in the &lt;a href=&quot;http://kramdown.gettalong.org/syntax.html&quot;&gt;kramdown documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;image-features&quot;&gt;Image Features&lt;/h3&gt;
+
+&lt;h4 id=&quot;parallax-effect&quot;&gt;Parallax Effect&lt;/h4&gt;
+
+&lt;p&gt;Keep in mind that paralax effect will not be captured if you like to print the page.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;div class=&quot;bg-scroll&quot; style=&quot;background-image: url('{{ &quot;/media/img/mountain1.jpg&quot; | absolute_url }}')&quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&quot;bg-scroll&quot; style=&quot;background-image: url('http://localhost:4000/media/img/mountain1.jpg')&quot;&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;caption-for-image&quot;&gt;Caption for Image&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;figure&amp;gt;
+   &amp;lt;img src=&quot;{{ &quot;/media/img/mountain2.jpg&quot; | absolute_url }}&quot; /&amp;gt;
+   &amp;lt;figcaption&amp;gt;A nice mountain.&amp;lt;/figcaption&amp;gt;
+&amp;lt;/figure&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;http://localhost:4000/media/img/mountain2.jpg&quot; /&gt;
+&lt;figcaption&gt;A nice mountain&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h4 id=&quot;image-allignment&quot;&gt;Image Allignment&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;![]({{ &quot;/media/img/mountain3.gif#right&quot; | absolute_url }})
+![]({{ &quot;/media/img/mountain2.gif#left&quot; | absolute_url }})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Allignment with caption&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;aside&amp;gt;
+   &amp;lt;figure class=&quot;left&quot;&amp;gt;
+      &amp;lt;img src=&quot;{{ &quot;/media/img/mountain3.jpg#left&quot; | absolute_url }}&quot; /&amp;gt;
+      &amp;lt;figcaption&amp;gt;What a view!&amp;lt;/figcaption&amp;gt;
+   &amp;lt;/figure&amp;gt;
+&amp;lt;/aside&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/media/img/mountain2.jpg#right&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent accumsan ante nulla, quis pulvinar nibh tempus sed. In congue congue odio, vel ornare mauris ultrices vel. Vestibulum tristique eros at enim vulputate fringilla. Nullam non augue sit amet elit interdum tempus non ut justo.&lt;/p&gt;
+
+&lt;aside&gt;
+&lt;figure class=&quot;left&quot;&gt;
+&lt;img src=&quot;http://localhost:4000/media/img/mountain3.jpg&quot; /&gt;
+&lt;figcaption&gt;What a view!&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/aside&gt;
+
+&lt;p&gt;Phasellus ut ipsum id leo sagittis pretium a quis neque. Maecenas rutrum lectus id magna malesuada, non dapibus neque tincidunt. Suspendisse ultrices accumsan eros, sit amet facilisis quam hendrerit a. Integer sed felis et diam efficitur accumsan. Suspendisse facilisis lectus non orci mattis vestibulum. Suspendisse molestie vulputate nunc non tincidunt. Maecenas vulputate, mauris ut rhoncus vulputate, tellus augue aliquet nibh, vel egestas nulla ipsum bibendum lorem. Pellentesque posuere laoreet lectus eget luctus. Vestibulum mattis ut ligula sed sodales. Vestibulum sit amet viverra arcu.&lt;/p&gt;
+
+&lt;h4 id=&quot;fullscreen-image&quot;&gt;Fullscreen image&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;div class=&quot;large&quot;&amp;gt;
+   ![]({{ &quot;/media/img/mountain2.jpg&quot; | absolute_url }})
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With caption&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;figure class=&quot;large&quot; markdown=&quot;1&quot;&amp;gt;   
+   ![]({{ &quot;/media/img/mountain2.jpg&quot; | absolute_url }})
+   &amp;lt;figcaption&amp;gt;On top of the mountain!&amp;lt;/figcaption&amp;gt;
+&amp;lt;/figure&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;figure class=&quot;large&quot;&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/media/img/mountain2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;On top of the mountain!&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h4 id=&quot;image-gallery&quot;&gt;Image Gallery&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;div class=&quot;album&quot;&amp;gt;
+   ![]({{ &quot;/media/img/Screenshot_2016-04-09-19-16-28.png&quot; | absolute_url }})
+   ![]({{ &quot;/media/img/Screenshot_2016-04-02-00-48-25.png&quot; | absolute_url }})
+   ![]({{ &quot;/media/img/Screenshot_2016-04-01-12-03-36.png&quot; | absolute_url }})
+   ![]({{ &quot;/media/img/Screenshot_2016-04-01-12-01-33.png&quot; | absolute_url }})
+   ![]({{ &quot;/media/img/Screenshot_2016-03-24-12-13-58.png&quot; | absolute_url }})
+   ![]({{ &quot;/media/img/Screenshot_2016-03-17-22-50-05.png&quot; | absolute_url }})
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With caption&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;div class=&quot;album&quot;&amp;gt;
+   // ...
+   &amp;lt;figure&amp;gt;
+      &amp;lt;img src=&quot;{{ &quot;/media/img/mountain2.jpg&quot; | absolute_url }}&quot; /&amp;gt;
+      &amp;lt;figcaption&amp;gt;On top of the mountain!&amp;lt;/figcaption&amp;gt;
+   &amp;lt;/figure&amp;gt;
+   &amp;lt;figure&amp;gt;
+      &amp;lt;img src=&quot;{{ &quot;/media/img/mountain3.jpg&quot; | absolute_url }}&quot; /&amp;gt;
+      &amp;lt;figcaption&amp;gt;What a view&amp;lt;/figcaption&amp;gt;
+   &amp;lt;/figure&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&quot;album&quot;&gt;
+   &lt;figure&gt;
+      &lt;img src=&quot;http://localhost:4000/media/img/mountain1.jpg&quot; /&gt;
+      &lt;figcaption&gt;Mountain and lake&lt;/figcaption&gt;
+   &lt;/figure&gt;   
+   &lt;figure&gt;
+      &lt;img src=&quot;http://localhost:4000/media/img/mountain2.jpg&quot; /&gt;
+      &lt;figcaption&gt;On top of the mountain!&lt;/figcaption&gt;
+   &lt;/figure&gt;   
+   &lt;figure&gt;
+      &lt;img src=&quot;http://localhost:4000/media/img/mountain3.jpg&quot; /&gt;
+      &lt;figcaption&gt;What a view&lt;/figcaption&gt;
+   &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;sourcecode-features&quot;&gt;Sourcecode Features&lt;/h3&gt;
+
+&lt;p&gt;With language highlighting&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;    ```html
+    &amp;lt;script&amp;gt;
+        var decentThemeConfig = {
+            ga: 'YOUR TRACK ID'
+        };
+    &amp;lt;/script&amp;gt;
+    ```
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With language highlighting, line numbers and line highlighting&lt;/p&gt;
+
+&lt;!-- I used a HTML entity encoder/decoder for this part to prevent the transformation and display the code to the user. --&gt;
+
+&lt;pre data-line=&quot;5&quot; class=&quot;line-numbers language-javascript&quot;&gt;&lt;code&gt;&amp;#x3C;pre data-line=&amp;#x22;5&amp;#x22; class=&amp;#x22;line-numbers language-javascript&amp;#x22;&amp;#x3E;&amp;#x3C;code&amp;#x3E;
+   Array.prototype.uniq = function () {
+       var map = {};
+       return this.filter(function (item) {
+           if (map[item]) {
+               return false;
+           } else {
+               map[item] = true;
+               return true;
+           }
+       });
+   };
+&amp;#x3C;/code&amp;#x3E;&amp;#x3C;/pre&amp;#x3E;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;author-in-quote&quot;&gt;Author in quote&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-markup&quot;&gt;&amp;gt; Our destiny offers not the cup of despair, but the chalice of opportunity. So let us seize it, not in fear, but in gladness.
+&amp;gt; 
+&amp;gt; &amp;lt;cite&amp;gt;——R.M. Nixon&amp;lt;/cite&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Our destiny offers not the cup of despair, but the chalice of opportunity. So let us seize it, not in fear, but in gladness.&lt;/p&gt;
+
+  &lt;p&gt;&lt;cite&gt;——R.M. Nixon&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;attention-box&quot;&gt;Attention Box&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;div class=&quot;tip&quot;&amp;gt;
+Chemicals including paint and thinners must be stored in labelled containers that are in good condition, as provided for in the regulations. Liquids must be placed in holding tanks.
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&quot;tip&quot;&gt;
+Chemicals including paint and thinners must be stored in labelled containers that are in good condition, as provided for in the regulations. Liquids must be placed in holding tanks.
+&lt;/div&gt;
+
+&lt;h3 id=&quot;404-page&quot;&gt;404 Page&lt;/h3&gt;
+
+&lt;p&gt;The 404 page has a fuzzy search implemented that lists urls that are similar to the entered url. Try it out: &lt;a href=&quot;http://localhost:4000/features&quot;&gt;Unknown URL&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;json-api&quot;&gt;JSON API&lt;/h3&gt;
+
+&lt;p&gt;The theme offers a JSON API for the blog posts. You can query all blog posts via: &lt;a href=&quot;http://localhost:4000/api/posts.json&quot;&gt;&lt;code&gt;/api/posts.json&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;pdf-and-powerpoint-integration&quot;&gt;PDF and PowerPoint integration&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;iframe src='https://view.officeapps.live.com/op/embed.aspx?src=http://img.labnol.org/di/PowerPoint.ppt' frameborder='0'&amp;gt;&amp;lt;/iframe&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;iframe src=&quot;https://view.officeapps.live.com/op/embed.aspx?src=http://img.labnol.org/di/PowerPoint.ppt&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;h3 id=&quot;mathjax-integration&quot;&gt;MathJax integration&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The result of this code:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;x = {-b \pm \sqrt{b^2-4ac} \over 2a}&lt;/script&gt;
+
+&lt;h2 id=&quot;more&quot;&gt;More&lt;/h2&gt;
+
+&lt;p&gt;More formating features can be found in the &lt;a href=&quot;http://kramdown.gettalong.org/syntax.html&quot;&gt;Kramdown syntax&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 07 Jun 2016 18:10:00 +0800</pubDate>
+        <link>http://localhost:4000/blog/features/Features</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/features/Features</guid>
+        
+        <category>Jekyll</category>
+        
+        <category>Theme</category>
+        
+        <category>GitHub</category>
+        
+        <category>Installation</category>
+        
+        
+        <category>Features</category>
+        
+      </item>
+    
+      <item>
+        <title>YAML Custom Features</title>
+        <description>&lt;p&gt;In this short post I changed the title that is displayed on the front page from &lt;code&gt;YAML Custom Features&lt;/code&gt; to &lt;code&gt;YAML Features&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;---
+title:             &quot;YAML Custom Features&quot;
+menutitle:         &quot;YAML Features&quot;
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I also added a redirect to this post. If you browse to &lt;a href=&quot;http://localhost:4000/YAML-Features-Redirect&quot;&gt;YAML-Feature-Redirect&lt;/a&gt; you should be redirected to this page. This only works if you have not removed the plugins.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;---
+redirect_from:     &quot;/YAML-Features-Redirect&quot;
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you like to redirect from multible sources you can specify it as an array.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;---
+redirect_from:  
+  - &quot;/YAML-Features-Redirect/&quot;
+  - &quot;/blog/old-category/YAML-Features/&quot;
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I also changed the cover image for this block via YAML.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;---
+cover:         /assets/mountain-alternative-cover.jpg
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To generate keywords for the search engines I use the tags that you specify in the post. If you are writing a page you need to specify keywords instead of tags.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;---        
+tags:          Jekyll YAML Features Explained  #Only used in posts!
+keywords:      Jekyll YAML Features Explained  #Only used in pages!
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Post will be sorted by category on the front page. This is how you define the category in YAML.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;---        
+category:     Readme
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;On a page I have additional options. For instance I can hide the page from the menu by setting the &lt;code&gt;visible&lt;/code&gt; tag to &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;---        
+visible:       false     
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If I like to have the page in the menu I can add &lt;code&gt;weight&lt;/code&gt; to the page in order to specify a position in the menu.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;---        
+weight:       5  
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The default language of your blog is defined in the &lt;code&gt;_config.yml&lt;/code&gt; file but if you like to write a post/page in another language you can use the &lt;code&gt;language&lt;/code&gt; attribute. This will specify that you are using another language on this page for search engines. Please use on of the &lt;a href=&quot;http://www.w3schools.com/tags/ref_language_codes.asp&quot;&gt;language codes&lt;/a&gt; as value.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;---        
+language:       en  
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can enable &lt;a href=&quot;https://disqus.com/&quot;&gt;disqus&lt;/a&gt; comments in posts by adding &lt;code&gt;comments&lt;/code&gt; to the page. To configure the disqus forum you need to modify the &lt;code&gt;disqus_shortname&lt;/code&gt; in the &lt;code&gt;_config.yml&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;---        
+comments:       true  
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you like to write some formula you can enable &lt;a href=&quot;https://www.mathjax.org/&quot;&gt;MathJax&lt;/a&gt;. Go to the &lt;a href=&quot;http://localhost:4000/blog/features/Features&quot;&gt;theme feature post&lt;/a&gt; to see it in action. You can find the &lt;a href=&quot;http://docs.mathjax.org/en/latest/options/tex2jax.html#configure-tex2jax&quot;&gt;preprocessing options&lt;/a&gt; in &lt;code&gt;_includes/mathjax_support.html&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;---        
+math:           true 
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you are writing a scholar article and like to add &lt;a href=&quot;https://scholar.google.com/intl/en/scholar/inclusion.html#indexing&quot;&gt;bibliographic metadata&lt;/a&gt; you can use the following YAML. This makes your article searchable at &lt;a href=&quot;https://scholar.google.com/&quot;&gt;Google Scholar&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;---        
+citation:
+  author: 
+    - &quot;Doe, John&quot;
+    - &quot;Roe, Jane&quot;
+  publication_date:    &quot;1996/05/17&quot;
+  online_date:         &quot;1996/06/22&quot;
+  title:               &quot;title&quot;
+  conference_title:    &quot;conference_title&quot;
+  journal_title:       &quot;journal_title&quot;
+  volume:              &quot;271&quot;
+  issue:               &quot;20&quot;
+  firstpage:           &quot;11761&quot;
+  lastpage:            &quot;11766&quot;
+  pdf_url:             &quot;/media/scholar_article.pdf&quot;
+  pdf_url_dynamic:     true                            #true: http://your-domain.com/[pdf_url]
+  issn:                &quot;1234-5678&quot;
+  isbn:                &quot;0-2345-6634-6&quot;
+  institution:         &quot;institution&quot;
+  report_institution:  &quot;report_institution&quot;
+  report_number:       &quot;12345678&quot;
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Additional features, that can be specified, can be found in the &lt;a href=&quot;https://jekyllrb.com/docs/frontmatter/&quot;&gt;YAML Front Matter documentation&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 06 Apr 2016 05:40:00 +0800</pubDate>
+        <link>http://localhost:4000/blog/features/YAML-Features</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/features/YAML-Features</guid>
+        
+        <category>Jekyll</category>
+        
+        <category>YAML</category>
+        
+        <category>Features</category>
+        
+        <category>Explained</category>
+        
+        
+        <category>Features</category>
+        
+      </item>
+    
+      <item>
+        <title>This post demonstrates post content styles</title>
+        <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.&lt;/p&gt;
+
+&lt;h2 id=&quot;some-great-heading-h2&quot;&gt;Some great heading (h2)&lt;/h2&gt;
+
+&lt;p&gt;Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu.&lt;/p&gt;
+
+&lt;p&gt;Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.&lt;/p&gt;
+
+&lt;h2 id=&quot;another-great-heading-h2&quot;&gt;Another great heading (h2)&lt;/h2&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-great-subheading-h3&quot;&gt;Some great subheading (h3)&lt;/h3&gt;
+
+&lt;p&gt;Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum.&lt;/p&gt;
+
+&lt;p&gt;Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-great-subheading-h3-1&quot;&gt;Some great subheading (h3)&lt;/h3&gt;
+
+&lt;p&gt;Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This quote will change your life. It will reveal the secrets of the universe, and all the wonders of humanity. Don’t misuse it.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-great-subheading-h3-2&quot;&gt;Some great subheading (h3)&lt;/h3&gt;
+
+&lt;p&gt;Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;p&amp;gt;Hello, World!&amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.&lt;/p&gt;
+
+&lt;h4 id=&quot;you-might-want-a-sub-subheading-h4&quot;&gt;You might want a sub-subheading (h4)&lt;/h4&gt;
+
+&lt;p&gt;In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.&lt;/p&gt;
+
+&lt;p&gt;In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.&lt;/p&gt;
+
+&lt;h4 id=&quot;but-its-probably-overkill-h4&quot;&gt;But it’s probably overkill (h4)&lt;/h4&gt;
+
+&lt;p&gt;In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.&lt;/p&gt;
+
+&lt;h2 id=&quot;specifying-some-footnotes-h2&quot;&gt;Specifying some footnotes (h2)&lt;/h2&gt;
+
+&lt;p&gt;This is text with a footnote. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est. &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est. &lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;oh-hai-an-unordered-list&quot;&gt;Oh hai, an unordered list!!&lt;/h3&gt;
+
+&lt;p&gt;In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;First item, yo&lt;/li&gt;
+  &lt;li&gt;Second item, dawg&lt;/li&gt;
+  &lt;li&gt;Third item, what what?!&lt;/li&gt;
+  &lt;li&gt;Fourth item, fo sheezy my neezy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;oh-hai-an-ordered-list&quot;&gt;Oh hai, an ordered list!!&lt;/h3&gt;
+
+&lt;p&gt;In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First item, yo&lt;/li&gt;
+  &lt;li&gt;Second item, dawg&lt;/li&gt;
+  &lt;li&gt;Third item, what what?!&lt;/li&gt;
+  &lt;li&gt;Fourth item, fo sheezy my neezy&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;headings-are-cool-h2&quot;&gt;Headings are cool! (h2)&lt;/h2&gt;
+
+&lt;p&gt;Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.&lt;/p&gt;
+
+&lt;p&gt;Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.&lt;/p&gt;
+
+&lt;p&gt;Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Some footnote &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;Another footnote &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;Last footnote &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sat, 05 Mar 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/blog/features/Content</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/features/Content</guid>
+        
+        <category>Jekyll</category>
+        
+        <category>Content</category>
+        
+        <category>Demo</category>
+        
+        
+        <category>Features</category>
+        
+      </item>
+    
+  </channel>
+</rss>

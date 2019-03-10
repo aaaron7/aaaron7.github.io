@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>机器学习中的回归问题</title>
+   <meta name="description" content="最近花时间认真学习了一下机器学习中的回归问题，虽然回归问题（线性回归+逻辑回归）在周志华的书里就那么几页，但其实书里对很多公式的推导省略了大量的细节，这次秉着较真的态度看了一下，发现名堂其实不少。写篇文章总结一下。">
+   <meta name="keywords" content="" />
+   <meta name="HandheldFriendly" content="True">
+   <meta name="robots" content="index,follow">
+   <meta name="googlebot" content="index,follow">
+	<meta property="og:title" content="机器学习中的回归问题" />
+	<meta property="og:type" content="article" />
+<meta property="og:image" content="http://localhost:4000/assets/mountain-cover.jpg" />
+<meta property="og:site_name" content="aaaron7&#39;s blog" />
+<meta property="og:description" content="最近花时间认真学习了一下机器学习中的回归问题，虽然回归问题（线性回归+逻辑回归）在周志华的书里就那么几页，但其实书里对很多公式的推导省略了大量的细节，这次秉着较真的态度看了一下，发现名堂其实不少。写篇文章总结一下。" />
+<meta property="og:url" content="http://localhost:4000/blog/machine/learning/linear-regression" />
+	<meta property="article:author" content="" />
+	<link rel="author" href="" />
+<meta property="article:published_time" content="2018-01-15T21:06:59+08:00" />
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习中的回归问题">
+<meta name="twitter:url" content="http://localhost:4000/">
+<meta name="twitter:description" content="最近花时间认真学习了一下机器学习中的回归问题，虽然回归问题（线性回归+逻辑回归）在周志华的书里就那么几页，但其实书里对很多公式的推导省略了大量的细节，这次秉着较真的态度看了一下，发现名堂其实不少。写篇文章总结一下。">
+<meta name="twitter:image:src" content="http://localhost:4000/assets/mountain-cover.jpg">
+  <link rel="stylesheet" href="http://localhost:4000/css/screen.css">
+  <link rel="alternate" type="application/rss+xml" title="aaaron7's blog" href="http://localhost:4000/feed.xml">
+  <link rel="icon" href="http://localhost:4000/assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="http://localhost:4000/assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="http://localhost:4000/assets/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="icon" href="http://localhost:4000/assets/favicon-62.png" sizes="62x62" type="image/png">
+</head>
+<body class="home-template">
+   <div class="site-wrapper">
+<header class="main-header detail-page image-bg  has-cover" style="background-image: url(http://localhost:4000/assets/mountain-cover.jpg)" >
+   <h1 class="page-title"><a href="http://localhost:4000/" title="aaaron7's blog">aaaron7's blog</a></h1>
+   <h2 class="page-description">小园香径独徘徊</h2>
+   <div class="nav">
+            <a class="page-link" href="http://localhost:4000/" title="Home">Home</a>
+            <a class="page-link" href="http://localhost:4000/about/" title="About">About</a>
+            <a class="page-link" href="http://localhost:4000/offline-warning/" title="Offline">Offline</a>
+            <a class="page-link" href="http://localhost:4000/cv" title="CV">CV</a>
+            <a class="page-link" href="http://localhost:4000/about" title="About">About</a>
+   </div>
+</header>
+       <main class="content" role="main">
+   <article class="post single-post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header class="post-header short-diver">
+           <h1 class="post-title" itemprop="name headline">机器学习中的回归问题</h1>
+           <section class="post-meta">
+                <time datetime="2018-01-15T21:06:59+08:00" itemprop="datePublished">Jan 15, 2018</time>
+                on
+           </section>
+       </header>
+       <section class="post-content short-diver" itemprop="articleBody">
+           <p>最近花时间认真学习了一下机器学习中的回归问题，虽然回归问题（线性回归+逻辑回归）在周志华的书里就那么几页，但其实书里对很多公式的推导省略了大量的细节，这次秉着较真的态度看了一下，发现名堂其实不少。写篇文章总结一下。</p>
+<h1 id="1-机器学什么">1. 机器学什么</h1>
+<p>了解过机器学习都应该知道，机器学习的本质就是给出一个包含n条记录的记录集合<script type="math/tex">\begin{align*}\mathbf{D}=\{(\mathbf{x_{1}},y_{1}),(\mathbf{x_{2}},y_{2}),...,(\mathbf{x_{n}},y_{n}) \} \end{align*}</script>，其中某一条记录<script type="math/tex">\begin{align*}\mathbf{x_{i}} \end{align*}</script>表示第i条记录的输入，<script type="math/tex">\begin{align*} y_{i} \end{align*}</script>代表第i条记录的输出标记。而单个<script type="math/tex">\begin{align*} x_{i} \end{align*}</script>一般为向量，表示每条记录的属性集合，
+<script type="math/tex">\begin{align*} \mathbf{x_{i}} = \{x_{i1},x_{i2},...,x_{id}\} \end{align*}</script> 表示对于每一条记录的x，包含d个属性。</p>
+<p>机器学习的任务都是通过数据集<script type="math/tex">\begin{align*} \mathbf{D} \end{align*}</script>, 学习得一个<script type="math/tex">\begin{align*} f \end{align*}</script>
+，使得<script type="math/tex">\begin{align*} f(x_{i}) \approx y_{i} \end{align*}</script>。</p>
+<h1 id="2-线性模型">2. 线性模型</h1>
+<p>这个<script type="math/tex">\begin{align*} f \end{align*}</script>长什么样，一般被称作“模型”，线性模型基本是最简单的一种：将属性加权组合。给定一个包含d个属性的记录<script type="math/tex">\begin{align*}\mathbf{x}=\{x_{1}; x_{2}; x_{3}...x_{d}\}  \end{align*}</script>,线性模型尝试学得:</p>
+<script type="math/tex; mode=display">\begin{align*} \mathbf{f(x)} = w_{1}x_{1} + w_{2}x_{2} + ... + w_{d}x_{d} + b\end{align*}</script>
+<p>其中，<script type="math/tex">\begin{align*} \mathbf{w} = \{w_{1},w_{2},...w_{d}\} \end{align*}</script> 为各个属性的权重，b为偏移(可以类比直线方程，<script type="math/tex">\begin{align*} y = kx + b \end{align*}</script>)。</p>
+<p>这里所说的学习，就是要通过数据集<script type="math/tex">\begin{align*} D \end{align*}</script> 来确定 <script type="math/tex">\begin{align*} \mathbf{w} 和 b  \end{align*}</script>。把w和x写为向量形式，则线性模型可以表示为：</p>
+<script type="math/tex; mode=display">\begin{align*} \mathbf{f(x)} = \mathbf{w^{T}x} + b \end{align*}</script>
+<blockquote>
+ <p><script type="math/tex">\begin{align*} \mathbf{w} \end{align*}</script> 为什么要转置？机器学习中所有的向量默认都是列向量，所以<script type="math/tex">\begin{align*} \mathbf{w} \end{align*}</script>需要转置成行向量才可以和<script type="math/tex">\begin{align*}\mathbf{x}  \end{align*}</script>相乘。 这里如果懵逼的话，建议复习一下矩阵乘法的规则。</p>
+</blockquote>
+<script type="math/tex; mode=display">\begin{align*}  \end{align*}</script>
+<h1 id="3-线性回归">3. 线性回归</h1>
+<p>一句话解释，线性回归就是线性模型的学习过程。在给定输入数据集<script type="math/tex">\begin{align*} \mathbf{D} \end{align*}</script>的基础上, 找到能够满足要求的 <script type="math/tex">\begin{align*} \mathbf{w}和b \end{align*}</script>, 这个过程，就是线性回归。</p>
+<p>那要怎么求解线性回归呢？不同的老师会用不同的方法，比如周志华会先从一元变量来举例（即假设所有记录都只有一个属性），进而扩展到多元的场景。这里介绍林轩田的求解思路，更nice一些。</p>
+<h2 id="31-等价变换">3.1 等价变换</h2>
+<p>这里我们把<script type="math/tex">\begin{align*} b \end{align*}</script> 记做 <script type="math/tex">\begin{align*} w_{0}  \end{align*}</script>，再设 <script type="math/tex">\begin{align*} x_{0}=1 \end{align*}</script>。这样，上面的线性模型可以等价改写为：</p>
+<script type="math/tex; mode=display">\begin{align*} 
+    \mathbf{f(x)} = w_{0}x_{0} + w_{1}x_{1} + w_{2}x_{2} + ... + w_{d}x_{d}
+ \end{align*}</script>
+<p>等价为向量模式（因为新引入了<script type="math/tex">\begin{align*} w_{0} \end{align*}</script>和 <script type="math/tex">\begin{align*} x_{0} \end{align*}</script>,故用大写表示）：</p>
+<script type="math/tex; mode=display">\begin{align*} \mathbf{f(x)} = W^{T}X \end{align*}</script>
+<h2 id="32-误差衡量">3.2 误差衡量</h2>
+<p>在考虑如何找到最好的<script type="math/tex">\begin{align*} W \end{align*}</script>之前，我们先考虑我们如何衡量一个<script type="math/tex">\begin{align*} W  \end{align*}</script>的好坏。在机器学习中，最常见的误差衡量标准就是均方差（Mean Square Erro，MSE）。给定一个<script type="math/tex">\begin{align*} W \end{align*}</script>时，在样本集<script type="math/tex">\begin{align*} \mathbf{D} \end{align*}</script>的n个样本的MSE为：</p>
+<script type="math/tex; mode=display">\begin{align*} 
+    E(W) = \frac{1}{n}\sum_{i=1}^{n}(W^{T}X_{i} - y{i})^{2}
+ \end{align*}</script>
+<blockquote>
+ <p>这里的<script type="math/tex">\begin{align*} X_{i} \end{align*}</script>是向量，代表一条记录的输入，<script type="math/tex">\begin{align*} y_{i} \end{align*}</script>代表对应的样本标签。</p>
+</blockquote>
+<p>为了方便后面的推导，交换一下X和w的位置，所以变成：</p>
+<script type="math/tex; mode=display">\begin{align*} 
+    E(W) = \frac{1}{n}\sum_{i=1}^{n}(X_{i}^{T}W - y_{i})^{2}
+ \end{align*}</script>
+<blockquote>
+ <p>如果不明白为毛可以交换，你可以展开一下，就会发现是等价的；</p>
+</blockquote>
+<p>这里我们看到式子里有个求和的符号，看着比较讨厌（不方便后续推导）。能不能干掉呢？观察一下求和内部的式子，是一堆平方的和。数学中有不少的概念最终落地下来是平方和的形式，一个直接的例子就是向量的模。比如一个N维向量<script type="math/tex">\begin{align*} \vec a \end{align*}</script> 的模 <script type="math/tex">\begin{align*} \|\vec a\| = \sqrt[2]{a_{1}^{2} + a_{2}^{2} + a_{3}^{2}...+ a_{N}^{2}  } \end{align*}</script>, 同理，上述的E(W)可以写成：</p>
+<script type="math/tex; mode=display">\begin{align*} 
+    E(W) = \frac{1}{n}\begin{Vmatrix}
+        X_{1}^{T}W - y_{1} \\
+        X_{2}^{T}W - y_{2} \\
+        ... \\
+        X_{n}^{T}W - y_{n}
+    \end{Vmatrix}
+    ^{2}
+ \end{align*}</script>
+<p>可等价变换为：</p>
+<script type="math/tex; mode=display">\begin{align*} 
+    E(W) = \frac{1}{n}\begin{Vmatrix}
+        \begin{pmatrix}
+            X_{1}^{T} \\
+            X_{2}^{T} \\
+            ... \\
+            X_{n}^{T} 
+        \end{pmatrix}W - 
+        \begin{pmatrix}
+            y_{1} \\
+            y_{2} \\
+            ... \\
+            y_{n}
+        \end{pmatrix}
+    \end{Vmatrix}
+    ^{2}
+ \end{align*}</script>
+<p>将X 和 y表示为向量形式，于是有：</p>
+<script type="math/tex; mode=display">\begin{align*} 
+    E(W) = \frac{1}{n}
+    \begin{Vmatrix}
+        \mathbf{X^{T}}W - \mathbf{y}
+    \end{Vmatrix}
+    ^{2}
+ \end{align*}</script>
+<h2 id="33-误差最小化">3.3 误差最小化</h2>
+<p>当我们得出E(W)的表达式之后，整个线性回归的过程就变成了找到一个W，使E(W)最小化。我们都知道求极值最直接的方法就是对其函数求导，导数为0的点就是极值点。再通过分析左右导数的正负情况即可得到能够使E(W)最小的W。</p>
+<p>首先对E(W) 求导可得：</p>
+<script type="math/tex; mode=display">\begin{align*} 
+    \frac{\partial E(W)}{\partial W} = 
+        \frac{\partial \frac{1}{n}(
+            \mathbf{W^{T}{X^{T}XW} - 2W^{T}X^{T}y + y^{T}y}
+        )}{\partial W}
+ \end{align*}</script>
+<blockquote>
+ <p>这里先用了一个简单的公式把上式展开 <script type="math/tex">\begin{align*} (a+b)^{2} = a^{2} + 2ab + b^{2} \end{align*}</script></p>
+</blockquote>
+<p>在上式中，X和y都是标量（只有W是变量），为了理解方便，我们假设 <script type="math/tex">\begin{align*} A = X^{T}X， b = X^{T}y, c = y^{T}y \end{align*}</script> , 于是上式可以化简为：</p>
+<script type="math/tex; mode=display">\begin{align*} 
+    \frac{\partial E(W)}{\partial W} = 
+        \frac{\partial \frac{1}{n}(
+            \mathbf{W^{T}AW - 2W^{T}b + c}
+        )}{\partial W}
+ \end{align*}</script>
+<p>现在的问题来了，W是一个d维向量，代表每个输入记录的d个特征值。我们该如何对向量求导呢？先假设w,a,b,c是普通的标量，则有：</p>
+<script type="math/tex; mode=display">\begin{align*} 
+    \frac{\partial E(w)}{\partial w} = 
+        \frac{\partial \frac{1}{n}(
+            aw^{2} - 2wb + c
+        )}{\partial w}
+    = 
+    \frac{1}{n}(2aw - 2b)
+\end{align*}</script>
+<p>标量情况的确是很简单，那向量情况呢？一般来说对矩阵求导都比较复杂，具体有兴趣的同学可以参考MIT的Matrix cookbook。原理其实比较简单，无非就是分别针对向量的各个分量求偏导，最终的结果组成的向量就是求导的结果。但推导起来肯定都比较复杂。cookbook针对常见情况直接给出了公式，非常方便。</p>
+<p>要求解上式的公式，主要会用到里面的两个公式：</p>
+<p>公式(69):   <script type="math/tex">\begin{align*} 
+    \frac{\partial \mathbf{x}^{T}\mathbf{a}}{\partial \mathbf{x}} =   
+    \frac{\partial \mathbf{a}^{T}\mathbf{x}}{\partial \mathbf{x}} =
+    \mathbf{a}
+\end{align*}</script></p>
+<p>公式(81): <script type="math/tex">\begin{align*}
+    \frac{\partial \mathbf{x}^{T}B\mathbf{x}}{\partial \mathbf{x}} = (B + B^{T})\mathbf{x}
+\end{align*}</script></p>
+<p>将(69)和(81)代入上面的向量版微分公式，可以得到：</p>
+<script type="math/tex; mode=display">\begin{align*} 
+    \frac{\partial E(W)}{\partial W} = 
+        \frac{\partial \frac{1}{n}(
+            \mathbf{W^{T}AW - 2W^{T}b + c}
+        )}{\partial W} 
+        = \frac{1}{n}((A + A^{T})W - 2b) 
+        = \frac{1}{n}(2AW - 2b) \\
+        = \frac{2}{n}(X^{T}XW - 2X^{T}y)
+ \end{align*}</script>
+<blockquote>
+ <p>因为<script type="math/tex">\begin{align*} A = X^{T}X \end{align*}</script>， 所以 <script type="math/tex">\begin{align*} A+A^{T} = 2A \end{align*}</script></p>
+</blockquote>
+<p>可以看到形式上，求导结果和标量版的一模一样。这或许就是线性代数美的地方。</p>
+<p>令E(W)=0，可以得到此时W的取值为：</p>
+<script type="math/tex; mode=display">\begin{align*} 
+    W = (X^{T}X)^{-1}X^{T}y
+ \end{align*}</script>
+<p>上式也叫W的闭式解(Closed-form solution)， 代表是从公式精准的推导出的结果，而不是靠一些数值优化方法得出。机器学习中，由于n的数量一般都&gt;d+1(d为属性的个数)，所以<script type="math/tex">\begin{align*} X^{T}X \end{align*}</script> 一般都是可逆的。</p>
+<h1 id="参考资料">参考资料</h1>
+<ol>
+ <li>林轩田的公开课；</li>
+ <li>Matrix cookbook；</li>
+</ol>
+       </section>
+       <footer class="post-footer">
+           <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+</div>
+       </footer>
+   </article>
+</main>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+   <div class="pswp__bg"></div>
+   <div class="pswp__scroll-wrap">
+       <div class="pswp__container">
+           <div class="pswp__item"></div>
+           <div class="pswp__item"></div>
+           <div class="pswp__item"></div>
+       </div>
+       <div class="pswp__ui pswp__ui--hidden">
+           <div class="pswp__top-bar">
+               <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+               <div class="pswp__preloader">
+                   <div class="pswp__preloader__icn">
+                       <div class="pswp__preloader__cut">
+                           <div class="pswp__preloader__donut"></div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+               <div class="pswp__share-tooltip"></div>
+           </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+           <div class="pswp__caption">
+               <div class="pswp__caption__center"></div>
+           </div>
+       </div>
+   </div>
+</div>
+<script type="text/javascript">
+var config = {
+  'disqus_shortname': 'jekylldecent'
+};
+</script>
+<script src="http://localhost:4000/js/jquery-1.12.0.min.js"></script>
+<script src="http://localhost:4000/js/jquery.fitvids.js"></script>
+<script src="http://localhost:4000/js/prism.js"></script>
+<script src="http://localhost:4000/js/photoswipe.js"></script>
+<script src="http://localhost:4000/js/photoswipe-ui-default.js"></script>
+<script src="http://localhost:4000/js/post.js"></script>
+       <footer class="site-footer">
+    <button class="go-to-top"></button>
+   <p class="copyright"><a href="http://localhost:4000/" title="aaaron7's blog">aaaron7's blog</a> &copy; 2019 | <a href="http://localhost:4000/feed.xml" title="RSS Feed">RSS Feed</a></p>
+   <p class="poweredby">powered by <a href="https://jekyllrb.com/" title="Jekyll">Jekyll</a> with the <a href="https://github.com/jwillmer/jekyllDecent" title="jekyllDecent Theme">jekyllDecent</a> theme</p>
+</footer>
+   </div>
+</body>
+<script src="http://localhost:4000/js/global.js"></script>
+</html>
