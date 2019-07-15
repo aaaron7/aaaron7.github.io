@@ -1,11 +1,16 @@
 ---
-layout: post
-title : "Build a cross-platform video player in 7 days"
-date: 2019-07-15 15:21:59 +0800
-categories: Video Tech
-author: aaron
----
 
+layout: post
+
+title : "Build a cross-platform video player in 7 days"
+
+date: 2019-07-15 15:21:59 +0800
+
+categories: Video Tech
+
+author: aaron
+
+---
 
 It’s been quite a while that I want to write some articles about FFmpeg. Learning and using FF in production is always a painful process for me and I believe the others probably have the same feelings.
 
@@ -43,7 +48,7 @@ Scripts will automatically download the necessary component such as FFmpeg sourc
 
 One thing need to be know for cross-platform project is it’s impossible to erase all platform-specific codes, it is necessary for porting our player to real world mobile project. We should place all platform-specific code together to keep core part of codes clean.
 
-1. Based on previous analysis, we slightly changed the folder to the following version
+Step 1. Based on previous analysis, we slightly changed the folder to the following version
 
 - NKMPlayer/
   - libs/
@@ -57,8 +62,8 @@ One thing need to be know for cross-platform project is it’s impossible to era
 
 > FFPlayground is our test project for test our player library.
 
-2. Create two files `NKMPlayer.cpp` `NKMPlayer.h` under `core/`
-3. Add some code for configuration testing. There is only 1 member function currently, used to get ffmpeg build configuration string.
+Step 2. Create two files `NKMPlayer.cpp` `NKMPlayer.h` under `core/`
+Step 3. Add some code for configuration testing. There is only 1 member function currently, used to get ffmpeg build configuration string.
 
 
 `NKMPlayer.h`
@@ -103,7 +108,7 @@ std::string NKMPlayer::ffBuildConfiguration()
 }
 ```
 
-4. Build it! Firstly we need to create a plain text file named `CMakeLists.txt` under path `src`
+Step 4. Build it! Firstly we need to create a plain text file named `CMakeLists.txt` under path `src`
 
 ```yaml
 # 1.
@@ -175,7 +180,7 @@ Explanation:
 \#6. Declare our target: a shared Library with name: `NKMPlayer`, and associate dependency framework. 
 \#7. Finally, associate static dependency library.
 
-5. Are we cool now? Not yet. We need to tell cmake what toolchain we want.
+Step 5. Are we cool now? Not yet. We need to tell cmake what toolchain we want.
 
 Generally speaking, The term "toolchain" means a set of build tools in cross-compile field which provided by target operation system company, such as we have android toolchain from NDK and iOS toolchain from Xcode. It usually includes compiler, linker, archiever, etc.
 
@@ -362,7 +367,7 @@ macro (find_host_package)
 endmacro (find_host_package)
 ```
 
-6. Time to do real build! Create a folder with name `build` under `NKMPlayer`, same level with `src`, then exec the following commands.
+Step 6. Time to do real build! Create a folder with name `build` under `NKMPlayer`, same level with `src`, then exec the following commands.
 
 ```yaml
 cd build/
@@ -374,9 +379,9 @@ Wow, our hello-world library is ready to launch !
 
 # Test Library in Simulator
 
-1. Create a Single View App iOS project in Xcode,and save it in `NKMPlayer/platform/iOS/FFPlayground` (FFPlaygruond is the project name)
-2. Add `libNKMPlayer.dylib` in build phrase tab.
-3. Add some code to `ViewController.m`, make it looks like following
+1, Create a Single View App iOS project in Xcode,and save it in `NKMPlayer/platform/iOS/FFPlayground` (FFPlaygruond is the project name)
+2, Add `libNKMPlayer.dylib` in build phrase tab.
+3, Add some code to `ViewController.m`, make it looks like following
 
 ```objc
 #import "ViewController.h"
@@ -397,7 +402,7 @@ using namespace std;
 }
 ```
 
-4. Press CMD + R to run the program, you'll see the ffmpeg build configuration be printed in console, which will looks like:
+4, Press CMD + R to run the program, you'll see the ffmpeg build configuration be printed in console, which will looks like:
 
 ```objc
 --target-os=darwin --arch=x86_64 --cc='xcrun -sdk iphonesimulator clang' --as='gas-preprocessor.pl -- xcrun -sdk iphonesimulator clang' --enable-cross-compile --disable-debug --disable-programs --disable-doc --enable-pic --extra-cflags='-arch x86_64 -mios-simulator-version-min=8.0' --extra-ldflags='-arch x86_64 -mios-simulator-version-min=8.0' --prefix=/Users/ali/Documents/projects/github/FFmpeg-iOS-build-script/thin/x86_64
