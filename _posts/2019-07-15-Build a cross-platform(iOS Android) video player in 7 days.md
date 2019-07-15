@@ -172,12 +172,19 @@ z bz2 iconv
 ```
 
 Explanation:
+
 \#1. Declare our project name 
+
 \#2. Tell cmake where to find our source files.
+
 \#3. Add a "CMake Function" —— `ADD_FRAMEWORK` which we will use it to find&link iOS framework to our project.
+
 \#4. Header search path.
+
 \#5. Library search path.
+
 \#6. Declare our target: a shared Library with name: `NKMPlayer`, and associate dependency framework. 
+
 \#7. Finally, associate static dependency library.
 
 Step 5. Are we cool now? Not yet. We need to tell cmake what toolchain we want.
