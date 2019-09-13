@@ -31,10 +31,8 @@ KMP 是经典的字符串匹配算法，数据结构的课上会讲，但绝大�
 
 假设 haystakc="Hello Hella", need="Hella", 过程如下:
 
-i=0:
-
-Hello Hella
-
+i=0:\n
+Hello Hella\n
 Hella
 
 i=1:
