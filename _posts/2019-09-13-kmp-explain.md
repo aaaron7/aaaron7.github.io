@@ -2,7 +2,7 @@
 
 layout: post
 
-title : “可能是最容易理解的 KMP 教程"
+title : 可能是最容易理解的 KMP 教程
 
 date: 2019-09-13 21:31:59 +0800
 
