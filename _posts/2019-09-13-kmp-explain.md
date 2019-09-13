@@ -83,74 +83,62 @@ Hello Hella
 
 首先做一个大胆的假设，**当基于主串的第 i 个字符，一旦模式串的第 j 位匹配失败。当 j>0时，则主串的 [i, i+j)区间直接跳过，从 i+j位置开始搜索，当 j 小于=0 时，则直接从 i+1的位置开始搜索**，简单的来说就是比如有：
 
+```
 i=0
-
 Hello Hella
-
 Hella(此时 j = 4, 代表模式串第五位匹配失败)
 
 则下一次直接从 i+j = 4位置开始搜索
 
 i=4
-
 Hello Hella
-
     Hella(j=0，失配，下一次 i=i+1 = 5)
 
 i=5
-
 Hello Hella
-
      Hella(j=0，失配，下一次 i=i+1 = 6)
 
 i=6
-
 Hello Hella
-
       Hella(matched)
-      
+```      
+
 基于我们的假设，整个循环次数从 6 次减少为 4 次。这个假设的核心思想就是，**某次失败的匹配中已经部分匹配的内容，认为这些内容不会出现在最后的匹配中，直接丢弃（跳过）**
 
 # BAD CASE
 
 上面的是一个假设，有没有可能存在不满足该假设的 bad case 呢。比如看以下的例子, 主串="HelloHelloHead" 模式串="HelloHead"
 
+```
 i=0
-
 HelloHelloHead
-
 HelloHea (a 和 l 不匹配，此时 j=7)
 
 按照刚才的公式，直接跳过已经匹配好的部分，跳到 i+j = 7处开始下一次匹配
 
 i=7
 HelloHelloHead
-
        HelloHead (匹配失败，i=i+1)
 
 i=8
-
 HelloHelloHead
-
         HelloHead (匹配失败)
-
+```
         
 我们知道这个 case 应该是能够匹配成功才对，但是按照我们的假设流程却失败了。通过分析过程能够发现，本质上是我们**跳过得太多了**。那到底要跳过多少比较合适呢？先回头看看例子
 
+```
 i=0
-
 HelloHelloHead
-
 HelloHea (a 和 l 不匹配，此时 j=7)
 
 j=7 的位置不匹配，但能看到前面两个位置是 H 和 e并且是匹配成功的，加上模式串的开头，也是 H 和 e，看起来可以**直接把开头的 He，对齐到后面的 He**，也就是i=5 的位置
 
 i=5
-
 HelloHelloHead
-
      HelloHead(matched)
-     
+```
+
 那更新一下我们的假设，**当匹配失败时，直接跳到 i+j的位置开始新的匹配，但对于某些case，需要少跳几步**
 
 # KMP 算法 
