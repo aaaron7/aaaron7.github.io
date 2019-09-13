@@ -30,24 +30,19 @@ KMP 是经典的字符串匹配算法，数据结构的课上会讲，但绝大�
 最符合直觉的方法就是穷举法，遍历 haystack 中每个字符，对于每个字符，都尝试以该字符作为开始于 needle 进行逐个字符串的比较，匹配上了则返回当前的 i。整个过程可以看做是模式串（needle）从对齐 haystack 第一个字符开始逐步一个一个往后移动的过程。
 
 假设 haystakc="Hello Hella", need="Hella", 过程如下:
-
-i=0:\n
-Hello Hella\n
+```
+i=0:
+Hello Hella
 Hella
 
 i=1:
-
 Hello Hella
-
  Hella
 
- 
 i=6:
-
 Hello Hella
-
       Hella(matched)
-
+```
       
 整个过程一共执行了 6 次检查。朴素的匹配方式实现版本如下：
 
