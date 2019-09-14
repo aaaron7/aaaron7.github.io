@@ -6,6 +6,8 @@ permalink: /about/
 
 一个技能树被瞎j8点的程序员，目前在 UC 工作。近期致力于开发一个跨平台的拍摄贴纸渲染框架。
 
+Email: aaaron7(at)outlook.com
+
 ### 社区工作
 SwiftGG 成员，Swift老司机周报编辑
 
