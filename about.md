@@ -4,15 +4,16 @@ title: About
 permalink: /about/
 ---
 
-一个技能树被瞎j8点的程序员，目前在 UC 工作。近期致力于开发一个跨平台的拍摄贴纸渲染框架。
+* A technologist focus on video&image tech in mobile platform. 
+* Experienced in functional programming(Swift/Haskell) and frontend stack(React).
+* Experienced in developer management and inspiration.
+* Currently work at Alibaba, lead video tech team of UCMobile.  
+
+
 
 Email: aaaron7(at)outlook.com
 
-### 社区工作
-SwiftGG 成员，Swift老司机周报编辑
-
-
-### 公开的分享
+### Speaks
 
 [*Swift for TensorFlow*, 2018@Swift.](https://github.com/atConf/atswift-2018-resources/blob/master/Swift%20for%20TensorFlow%20-%20%E8%8E%B2%E5%8F%94/Swift%20for%20TensorFlow%20-%20%E8%8E%B2%E5%8F%94.pdf)
 
@@ -31,7 +32,7 @@ SwiftGG 成员，Swift老司机周报编辑
 
 待建设
 
-### 其他链接
+### Others
 
 [知乎](https://www.zhihu.com/people/aaaron7/)，[简书](https://www.jianshu.com/u/9efd08855d3a)
 
