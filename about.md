@@ -30,7 +30,16 @@ Email: aaaron7(at)outlook.com
 
 ### Project
 
-待建设
+Here are some of my side projects.
+
+Ongoing:
+
+* [NKMPlayer](https://github.com/aaaron7/NKMPlayer), A cross-platform video player based on FFmpeg. Provide easy-to-user interface to both iOS and Android.
+
+Completed:
+
+* [SwiftParser](https://github.com/aaaron7/swift_monadic_parser), a language parser and interpreter by using parser combinator methodology in Swift2.
+* [JASI](https://github.com/aaaron7/JASI), a lisp interpreter written in Haskell.
 
 ### Others
 
