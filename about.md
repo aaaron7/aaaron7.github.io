@@ -19,6 +19,8 @@ Email: aaaron7(at)outlook.com
 
 [*Swift for TensorFlow*, 2018@Swift.](https://github.com/atConf/atswift-2018-resources/blob/master/Swift%20for%20TensorFlow%20-%20%E8%8E%B2%E5%8F%94/Swift%20for%20TensorFlow%20-%20%E8%8E%B2%E5%8F%94.pdf)
 
+[*从Observer到Observable：使用Functional Swift提升复杂iOS项目的可维护性*](https://github.com/thinkpiggy/qcon2018ppt/blob/master/%E4%BB%8EObserver%E5%88%B0Observable%EF%BC%9A%E4%BD%BF%E7%94%A8Functional%20Swift%E6%8F%90%E5%8D%87%E5%A4%8D%E6%9D%82iOS%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%8F%AF%E7%BB%B4%E6%8A%A4%E6%80%A7.pdf)
+
 [*Lightweight reactive-api for MVVM*, 2017@Swift.](https://github.com/atConf/atswift-2017-resources/tree/master/Lightweight%20reactive-api%20for%20MVVM)
 
 [*函数式设计模式*, iDev 2016](https://github.com/devlinkcn/ppts_for_idev2016/blob/master/PDF/%EF%BC%88%E7%8E%8B%E6%96%87%E6%A7%BF%EF%BC%89%E5%87%BD%E6%95%B0%E5%BC%8F%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.pdf)
