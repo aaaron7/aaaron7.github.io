@@ -13,7 +13,9 @@ permalink: /about/
 
 Email: aaaron7(at)outlook.com
 
-### Speaks
+### Tech Talks
+
+[*Build your own nerual nerwork engine in Swift*](https://github.com/aaaron7/light_nn/blob/main/nn_swift.pdf)
 
 [*Swift for TensorFlow*, 2018@Swift.](https://github.com/atConf/atswift-2018-resources/blob/master/Swift%20for%20TensorFlow%20-%20%E8%8E%B2%E5%8F%94/Swift%20for%20TensorFlow%20-%20%E8%8E%B2%E5%8F%94.pdf)
 
