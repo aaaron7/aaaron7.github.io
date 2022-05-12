@@ -2,6 +2,50 @@
 
   
     {
+        "title": "Swift for Tensorflow",
+        "category": "",
+        "url": "http://localhost:4000/blog/algorithm/swift-for-tensorflow",
+        "tags": [],
+        "date": "2020-07-01 21:31:59 +0800",
+        "language": "en"
+    },
+  
+
+  
+    {
+        "title": "可能是最容易理解的 KMP 教程",
+        "category": "",
+        "url": "http://localhost:4000/blog/algorithm/kmp-explain",
+        "tags": [],
+        "date": "2019-09-13 21:31:59 +0800",
+        "language": "en"
+    },
+  
+
+  
+    {
+        "title": "Build a cross-platform video player in 7 days",
+        "category": "",
+        "url": "http://localhost:4000/blog/video/tech/Build-a-cross-platform(iOS-Android)-video-player-in-7-days",
+        "tags": [],
+        "date": "2019-07-15 15:21:59 +0800",
+        "language": "en"
+    },
+  
+
+  
+    {
+        "title": "给程序员的一些持续学习的建议",
+        "category": "",
+        "url": "http://localhost:4000/blog/feels/continuous-learning",
+        "tags": [],
+        "date": "2019-06-21 23:09:59 +0800",
+        "language": "en"
+    },
+  
+
+  
+    {
         "title": "线性回归的数学推导",
         "category": "",
         "url": "http://localhost:4000/blog/ml/linear-regression",
